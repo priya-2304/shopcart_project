@@ -1,25 +1,3 @@
-// export default function ReturnPolicy() {
-//   return (
-//     <div className="min-h-screen p-6 bg-gray-50">
-//       <h1 className="text-3xl font-bold mb-4 text-gray-800">Return Policy</h1>
-//       <p className="mb-4 text-gray-700">
-//         We want you to be happy with your purchase. If you are not satisfied, you can return most items within 7 days of delivery.
-//       </p>
-//       <h2 className="text-xl font-semibold mb-2">Eligibility for Returns</h2>
-//       <ul className="list-disc list-inside mb-4 text-gray-700">
-//         <li>Items must be in original condition with tags intact.</li>
-//         <li>Products should not be used or washed.</li>
-//         <li>Certain items like gift cards are non-returnable.</li>
-//       </ul>
-//       <h2 className="text-xl font-semibold mb-2">Process</h2>
-//       <p className="mb-4 text-gray-700">
-//         Contact our support team to initiate a return. Once approved, ship the item back using the provided label. Refunds will be processed within 5-7 business days.
-//       </p>
-//     </div>
-//   );
-// }
-
-
 import React from 'react';
 
 export default function ReturnPolicy() {
