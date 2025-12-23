@@ -1,0 +1,255 @@
+/* ===== CART PAGE ===== */
+.cart-page {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.cart-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #462C2F; /* dark accent */
+}
+
+.empty-cart {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #713C46; /* dark text */
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  background: #EEEEEE; /* light background */
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: 0.2s;
+}
+
+.cart-item:hover {
+  transform: translateY(-3px);
+}
+
+.cart-item-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cart-item-details {
+  flex: 1;
+  min-width: 150px;
+}
+
+.cart-item-details h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #462C2F;
+}
+
+.cart-item-details .price {
+  font-weight: bold;
+  color: #E16C5B; /* primary accent */
+  margin-top: 5px;
+}
+
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qty-btn {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.qty-btn:hover {
+  background: #f0f0f0;
+}
+
+.qty-num {
+  min-width: 25px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.remove-btn {
+  padding: 6px 12px;
+  background: #E16C5B;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.remove-btn:hover {
+  background: #713C46;
+}
+
+/* Checkout Section */
+.cart-footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cart-footer .total {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #462C2F;
+}
+
+.checkout-btn {
+  background: #E16C5B;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.checkout-btn:hover {
+  background: #713C46;
+}
+
+/* Payment Options */
+.checkout-options, .online-payment {
+  max-width: 500px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 30px;
+  background: #EEEEEE;
+  border-radius: 12px;
+}
+
+.checkout-options h2, .online-payment h2 {
+  color: #462C2F;
+  margin-bottom: 20px;
+}
+
+.payment-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.payment-buttons button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: #E16C5B;
+  color: #fff;
+  transition: 0.2s;
+}
+
+.payment-buttons button:hover {
+  background: #713C46;
+}
+
+/* Order Confirmation */
+.order-confirmed-full {
+   min-height: calc(100vh - 70px); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #4CAF50; /* green */
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.order-confirmed-full h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.order-confirmed-full p {
+  font-size: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-footer {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .checkout-btn, .remove-btn {
+    width: 100%;
+  }
+
+  .cart-qty {
+    justify-content: flex-start;
+  }
+
+  .payment-buttons {
+    flex-direction: column;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .cart-item {
+    padding: 10px;
+    position: relative;
+  }
+
+  .cart-item-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .cart-item-details h3 {
+    font-size: 0.9rem;
+  }
+
+  .cart-footer {
+    position: fixed; /* Checkout button niche chipka do */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-radius: 0;
+  }
+  
+  .cart-page {
+    padding-bottom: 100px; /* Footer ke liye jagah */
+  }
+}

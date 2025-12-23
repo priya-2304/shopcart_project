@@ -1,0 +1,1578 @@
+/* --- Base Wrapper --- */
+.home-main-wrapper {
+  max-width: 1240px;
+  margin: 110px auto 40px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* --- SECTION 1: SUMMER SALE CAROUSEL (Updated) --- */
+.summer-sale-carousel {
+  position: relative;
+  width: 100%;
+  height: 420px; /* Badi screen ke liye height */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  background: #f9f9f9;
+}
+
+.carousel-inner {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-img-wide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Photo stretch nahi hogi, ekdum fit aayegi */
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* Photo ke upar jo text aur button hai */
+.carousel-overlay {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+  z-index: 10;
+}
+
+.promo-btn {
+  background: #B91C1C; /* Summer Sale wala dark red */
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.promo-btn:hover {
+  transform: scale(1.05);
+  background: #991b1b;
+}
+
+/* Carousel ke dots niche */
+.carousel-indicator-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 11;
+}
+
+.indicator-dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator-dot.active {
+  background: white;
+  width: 30px; /* Pill shape animation */
+  border-radius: 10px;
+}
+
+/* --- SECTION 2: POPULAR CATEGORIES --- */
+.popular-categories-container {
+  margin-top: 10px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.section-header h2 {
+  font-size: 1.6rem;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.view-all-link {
+  color: #0284c7;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.categories-flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 5px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.categories-flex::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+.category-card-link { text-decoration: none; color: inherit; }
+
+.category-card {
+  text-align: center;
+  min-width: 110px;
+  transition: 0.3s;
+}
+
+.circle-img-box {
+  width: 85px;
+  height: 85px;
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.category-card:hover .circle-img-box {
+  transform: translateY(-8px);
+  border-color: #E16C5B;
+  box-shadow: 0 10px 20px rgba(225, 108, 91, 0.15);
+}
+
+.circle-img-box img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.category-card p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+/* --- SECTION 3: FEATURED PRODUCTS --- */
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* View All Button at bottom */
+.view-all-btn {
+  display: inline-block;
+  padding: 12px 35px;
+  background-color: #E16C5B;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.view-all-btn:hover {
+  background-color: #c95a4a;
+  transform: translateY(-2px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .summer-sale-carousel { height: 250px; }
+  .carousel-overlay { bottom: 20px; }
+  .promo-btn { padding: 8px 16px; font-size: 0.8rem; }
+  .section-header h2 { font-size: 1.3rem; }
+  .home-main-wrapper { margin-top: 80px; gap: 35px; }
+}
+
+
+/* --- Banner Carousel Container --- */
+.summer-sale-carousel {
+  position: relative;
+  width: 100%;
+  height: 450px; /* Desktop ke liye ideal height */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  background: #fdfdfd; /* Image load hone tak light background */
+}
+
+/* --- Image Styling (Sabhi 4 images ke liye) --- */
+.carousel-img-wide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Isse hoodie aur shoes wali images stretch nahi hongi */
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* --- Responsive Fixes (Mobile ke liye) --- */
+@media (max-width: 768px) {
+  .summer-sale-carousel {
+    height: 280px; /* Mobile par banner chota rahega */
+  }
+  
+  .promo-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .carousel-overlay {
+    bottom: 30px;
+  }
+}
+
+/* --- Dots styling for 4 slides --- */
+.carousel-indicator-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Active Dot (Peach/Coral Theme) */
+.indicator-dot.active {
+  background: #E16C5B; /* Aapka theme color */
+  width: 25px; /* Pill shape effect */
+  border-radius: 10px;
+}
+
+/* --- Base Wrapper --- */
+.home-main-wrapper {
+  max-width: 1240px;
+  margin: 110px auto 40px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* --- Banner Carousel Container --- */
+.summer-sale-carousel {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  background: #fdfdfd;
+}
+
+.carousel-inner {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Smooth Fade Animation */
+.carousel-img-wide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.6s ease-in-out; /* Smooth Fade Transition */
+  animation: fadeIn 0.6s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+.carousel-overlay {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+  z-index: 10;
+}
+
+.promo-tag {
+  display: block;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.promo-btn {
+  background: #B91C1C;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.promo-btn:hover {
+  transform: scale(1.05);
+  background: #991b1b;
+}
+
+/* Navigation Dots */
+.carousel-indicator-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator-dot.active {
+  background: #E16C5B; /* Peach/Coral Color */
+  width: 25px; /* Pill shape */
+  border-radius: 10px;
+}
+
+/* --- Popular Categories --- */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.categories-flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.circle-img-box {
+  width: 85px;
+  height: 85px;
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.category-card:hover .circle-img-box {
+  transform: translateY(-8px);
+  border-color: #E16C5B;
+  box-shadow: 0 10px 20px rgba(225, 108, 91, 0.15);
+}
+
+@media (max-width: 768px) {
+  .summer-sale-carousel { height: 280px; }
+  .carousel-overlay { bottom: 30px; }
+  .promo-btn { padding: 8px 20px; font-size: 0.8rem; }
+}
+
+/* --- Base Wrapper --- */
+.home-main-wrapper {
+  max-width: 1240px;
+  margin: 110px auto 40px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* --- SECTION 1: HERO GRID (Flash Sale + Slider) --- */
+.hero-grid-section {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* Left card 45%, Right Slider 55% approx */
+  gap: 20px;
+  height: 450px;
+  margin-bottom: 20px;
+}
+
+/* Left Side: Flash Sale Card */
+.flash-sale-banner {
+  background: linear-gradient(135deg, #E16C5B 0%, #c95a4a 100%);
+  border-radius: 20px;
+  padding: 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(225, 108, 91, 0.2);
+}
+
+.flash-content .badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  width: fit-content;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.flash-content h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 15px;
+}
+
+.flash-content h1 strong {
+  font-weight: 800;
+  color: #fff;
+  text-decoration: underline;
+}
+
+.flash-content p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  opacity: 0.95;
+}
+
+.shop-btn-red {
+  display: inline-block;
+  background: white;
+  color: #E16C5B !important;
+  padding: 14px 35px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  width: fit-content;
+  transition: 0.3s ease;
+}
+
+.shop-btn-red:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Right Side: Slider Box */
+.mini-slider-box {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.slider-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.grid-slider-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Image fategi nahi aur poori dikhegi */
+  transition: opacity 0.5s ease;
+}
+
+/* Dots on the Slider */
+.grid-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.g-dot {
+  width: 8px;
+  height: 8px;
+  background: #ddd;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.g-dot.active {
+  background: #E16C5B;
+  width: 20px;
+  border-radius: 10px;
+}
+
+/* --- SECTION 2: POPULAR CATEGORIES --- */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.categories-flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.circle-img-box {
+  width: 85px;
+  height: 85px;
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.category-card:hover .circle-img-box {
+  transform: translateY(-8px);
+  border-color: #E16C5B;
+  box-shadow: 0 10px 20px rgba(225, 108, 91, 0.15);
+}
+
+/* --- SECTION 3: FEATURED PRODUCTS --- */
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.view-all-btn {
+  display: inline-block;
+  padding: 12px 35px;
+  background-color: #E16C5B;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* --- RESPONSIVE FIXES --- */
+@media (max-width: 900px) {
+  .hero-grid-section {
+    grid-template-columns: 1fr; /* Mobile pe ek ke niche ek */
+    height: auto;
+  }
+  .flash-sale-banner, .mini-slider-box {
+    height: 320px;
+  }
+  .flash-content h1 {
+    font-size: 2.2rem;
+  }
+  .home-main-wrapper {
+    margin-top: 80px;
+  }
+}
+
+/* Hero Grid Section */
+.hero-grid-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  height: 450px;
+  margin-bottom: 50px;
+}
+
+/* Base Banner Style */
+.flash-sale-banner {
+  border-radius: 20px;
+  padding: 50px;
+  color: white;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.8s ease-in-out;
+}
+
+/* Background Images with Dark Gradients for Text Visibility */
+.bg-fashion {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2)), 
+   url('/croptop.png');
+}
+.bg-grocery {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2)), 
+  url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000');
+}
+.bg-sneakers {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2)), 
+  url('https://images.unsplash.com/photo-1552346154-21d32810aba3?q=80&w=1000');
+}
+.bg-skincare {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2)), 
+  url('https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1000');
+}
+
+/* Text Animations */
+.animate-text {
+  font-size: 4rem;
+  font-weight: 900;
+  margin: 10px 0;
+  animation: slideUp 0.5s ease;
+}
+
+.animate-text-slow {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  animation: slideUp 0.8s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.shop-btn-white {
+  background: white;
+  color: #333;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.shop-btn-white:hover {
+  background: #E16C5B;
+  color: white;
+}
+
+/* Slider (Right Side) remains same but adding subtle shadow */
+.mini-slider-box {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.05);
+}
+
+/* Flash Sale Container Styling */
+.flash-sale-container {
+  background-color: #fbecec; /* Light Peach/Pink Background */
+  border-radius: 30px;
+  padding: 40px;
+  margin: 50px 0;
+}
+
+.flash-sale-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.flash-sale-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.timer-box {
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.flash-sale-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.flash-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.flash-card:hover {
+  transform: translateY(-10px);
+}
+
+.discount-tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #ff4d4d;
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.flash-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.flash-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.price-tag {
+  margin-bottom: 15px;
+}
+
+.current-price {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #e16c5b;
+  margin-right: 10px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #aaa;
+  font-size: 1rem;
+}
+
+.add-btn {
+  width: 100%;
+  padding: 12px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background: #000;
+}
+.categories-flex {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Circle Container */
+.circle-img-box {
+  width: 120px;   /* Size thoda bada kiya hai taaki clear dikhe */
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  /* Shadow jo tune maangi thi */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+  border: 3px solid #fff; /* White border taaki image clean lage */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Real Image Scaling */
+.circle-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Isse image pure circle ko fill karegi model photography ki tarah */
+}
+
+/* Hover Effect */
+.category-card:hover .circle-img-box {
+  transform: scale(1.1);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.category-card p {
+  margin-top: 15px;
+  font-weight: 700;
+  color: #462C2F;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Container padding */
+/* Container Background */
+.popular-categories-container {
+  padding: 60px 5%;
+  background-color: #fafafa; /* Very light background for contrast */
+}
+
+/* Modern Header Layout */
+.category-header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.main-title {
+  font-size: 1.8rem;
+  color: #462C2F;
+  font-weight: 800;
+  margin: 0;
+}
+
+.sub-title {
+  color: #888;
+  font-size: 0.95rem;
+  margin-top: 5px;
+}
+
+/* Theme Colored View All Button */
+.view-all-btn-modern {
+  background-color: #E16C5B; /* TERA THEME COLOR */
+  color: white;
+  padding: 10px 22px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(225, 108, 91, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.view-all-btn-modern:hover {
+  background-color: #462C2F;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Category Grid Spacing */
+.categories-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.circle-img-box img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+.category-card:hover .category-name {
+  color: #E16C5B; /* Text changes to theme color on hover */
+}
+
+/* --- Isko update kar, margin 110px se 60px kar de --- */
+.home-main-wrapper {
+  max-width: 1240px;
+  margin: 65px auto 40px; /* Is 110px ko 65px kar diya bas */
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Gap bhi thoda kam kar diya */
+}
+
+.home-welcome-header { 
+  text-align: center; 
+  margin-top: -10px; /* Ye nayi line add karde gap khatam karne ko */
+  margin-bottom: 15px; 
+}
+/* Icon ki styling handle karne ke liye */
+.circle-img-box svg {
+  font-size: 28px !important; /* Pehle bada tha, ab chota kar diya */
+  color: #E16C5B;
+}
+.category-card:hover .circle-img-box svg {
+  transform: rotate(5deg); /* Thoda sa animation */
+}
+
+.category-name {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #462C2F;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+.home-welcome-header { text-align: center; margin-bottom: 30px; }
+.premium-tag { color: #E16C5B; font-size: 12px; letter-spacing: 3px; font-weight: bold; }
+.header-line { width: 50px; height: 3px; background: #E16C5B; margin: 10px auto; border-radius: 10px; }
+.circle-img-box { 
+  width: 80px;  /* Size chota kar diya */
+  height: 80px; 
+  border-radius: 50%; 
+  background: #fff; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(225, 108, 91, 0.1); 
+  border: 1px solid #eee;
+  transition: 0.3s;
+}
+.category-card:hover .circle-img-box { transform: translateY(-5px); border-color: #E16C5B; }
+
+/* --- Gap Removal (Navbar se chipkaane ke liye) --- */
+.home-main-wrapper {
+  max-width: 1240px;
+  margin: 0 auto 40px; /* Top margin 0 kar diya gap hatane ke liye */
+  padding: 0; 
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* --- Professional Top Banner Styling --- */
+.top-theme-promo-banner {
+  background-color: #FDF2F0;
+  color: #462C2F;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  width: 100%;border-bottom: 1px solid rgba(225, 108, 91, 0.2);
+}
+
+.banner-cta-link {
+  color: #E16C5B; /* TERA THEME COLOR */
+  font-weight: 800;
+  margin-left: 12px;
+  text-decoration: none;
+  padding-bottom: 2px;
+  transition: 0.3s;
+  border-bottom: 2px solid #E16C5B;
+}
+
+.banner-cta-link:hover {
+  color: #462C2F;
+  border-color: #462C2F;
+}
+
+/* --- Discover Section (Your Theme) --- */
+.home-welcome-header {
+  text-align: center;
+  padding: 50px 20px 20px;
+ background: radial-gradient(circle at center, #fff 0%, #fafafa 100%);
+}
+
+.premium-tag {
+  color: #E16C5B; /* TERA THEME COLOR */
+  font-size: 11px;
+  letter-spacing: 5px;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.home-welcome-header h2 {
+  font-size: 3.2rem; /* Bada aur bold impact ke liye */
+  font-weight: 900;
+  color: #462C2F;
+ margin: 10px 0;
+  letter-spacing: -1px;
+}
+.header-line {
+  width: 40px;
+  height: 3px;
+  background: #E16C5B; /* TERA THEME COLOR */
+  margin: 10px auto;
+}
+
+
+/* --- Policies Section --- */
+.home-policies-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 20px;
+  background: #fff;
+  text-align: center;
+  gap: 20px;
+}
+
+.policy-icon-circle {
+  font-size: 24px;
+  color: #E16C5B; /* TERA THEME COLOR */
+  margin-bottom: 15px;
+}
+
+.policy-item h4 {
+  font-size: 16px;
+  color: #222;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.policy-item p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* --- Sleek Subscribe Bar (Compressed Height) --- */
+.home-subscribe-bar {
+  text-align: center;
+  padding: 30px 20px 50px;
+  background: #fff;
+}
+
+.home-subscribe-bar h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #222;
+}
+
+.home-subscribe-bar h3 span {
+  color: #E16C5B; /* TERA THEME COLOR */
+}
+
+.home-subscribe-bar p {
+  color: #777;
+  font-size: 14px;
+  margin: 8px 0 20px;
+}
+
+.sub-input-group {
+  display: flex;
+  max-width: 600px; /* Wide width as requested */
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 50px; /* Rounded pill shape */
+  overflow: hidden;
+}
+
+.sub-input-group input {
+  flex: 1;
+  border: none;
+  padding: 12px 20px;
+  outline: none;
+  font-size: 14px;
+}
+
+.sub-button-theme {
+  background-color: #E16C5B; /* TERA THEME COLOR */
+  color: white;
+  border: none;
+  padding: 0 30px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sub-button-theme:hover {
+  background-color: #462C2F; /* Dark brown theme contrast */
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+  .home-policies-section { flex-direction: column; gap: 30px; }
+  .sub-input-group { width: 100%; }
+}
+
+/* --- NEW HERO SLIDER CSS --- */
+.hero-modern-slider {
+  width: 100%;
+  height: 550px; /* Screenshot ke hisaab se height */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: background-color 0.6s ease-in-out;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.slider-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.slider-left-content {
+  flex: 1;
+  z-index: 5;
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.casual-badge {
+  background: #ffffff;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 13px;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: inline-block;
+}
+
+.hero-title {
+  font-size: 68px; /* Bada bold font */
+  font-weight: 900;
+  color: #111;
+  margin: 25px 0 15px;
+  line-height: 1.1;
+  font-family: 'Inter', sans-serif;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  color: #444;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.hero-cta-btn {
+  background: #1a56db; /* Wahi blue color */
+  color: #fff !important;
+  padding: 18px 40px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s;
+  box-shadow: 0 10px 20px rgba(26, 86, 219, 0.2);
+}
+
+.hero-cta-btn:hover {
+  transform: scale(1.05);
+  background: #1649b8;
+}
+
+.slider-right-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.slider-right-image img {
+  max-height: 500px; /* Screenshot wala size */
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(20px 20px 50px rgba(0,0,0,0.1));
+}
+
+/* Dots Styling */
+.modern-dots {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+}
+
+.m-dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.m-dot.active {
+  width: 35px; /* Long pill shape dot */
+  background: #004d40; /* Dark teal color */
+  border-radius: 20px;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.fade-in-image {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9) translateX(30px); }
+  to { opacity: 1; transform: scale(1) translateX(0); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero-modern-slider { height: auto; padding: 60px 0; }
+  .slider-container { flex-direction: column; text-align: center; }
+  .hero-title { font-size: 40px; }
+  .slider-right-image { margin-top: 40px; justify-content: center; }
+  .slider-right-image img { height: 300px; }
+}
+
+/* --- NEW THEME FLASH SALE SECTION --- */
+
+.theme-flash-sale-section.compact-flash {
+  background: var(--dark);
+  padding-top: 20px;     /* Upar ka space ekdum kam kar diya */
+  padding-bottom: 40px;  /* Niche thoda rakha hai balance ke liye */
+  margin-top: 10px;      /* Upar wale section se doori kam kar di */
+  color: var(--white);
+  overflow: hidden;
+}
+
+.flash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 25px;
+}
+
+.flash-title-box h2 {
+  margin-top: 0;         /* H2 ki default margin zero */
+  line-height: 1;        /* Line height tight ki */
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.flash-title-box h2 {
+  margin-top: 0;         /* H2 ki default margin zero */
+  line-height: 1;        /* Line height tight ki */
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.flash-timer-wrapper {
+  display: flex;
+  gap: 15px;
+}
+
+.timer-unit-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #E16C5B;
+}
+
+.timer-unit-box span {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #E16C5B;
+}
+
+.timer-unit-box small {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+}
+
+.flash-slider-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.flash-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.flash-slide-group {
+  display: flex;
+  gap: 20px;
+  min-width: 100%;
+}
+
+.flash-item-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 340px;
+  position: relative;
+}
+
+.flash-item-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.flash-item-card:hover img {
+  transform: scale(1.1);
+}
+
+.flash-item-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(transparent, rgba(70, 44, 47, 0.95)); /* Fades into deep brown */
+  color: white;
+}
+
+.flash-item-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #E16C5B;
+}
+
+.flash-item-info h3 {
+  margin: 5px 0 10px;
+  font-size: 1.1rem;
+}
+
+.flash-buy-btn {
+  background: none;
+  border: none;
+  color: #E16C5B;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.flash-nav-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.f-dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.f-dot.active {
+  background: #E16C5B;
+  width: 30px;
+  border-radius: 10px;
+}
+
+/* --- DISCOVER STYLE HEADER --- */
+.home-welcome-header.compact-header {
+  padding: 15px 0;      /* Bahut kam padding */
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.compact-header .premium-tag {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--primary);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.compact-header h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--dark);
+}
+
+/* ============================================================
+   HOME PAGE MOBILE RESPONSIVE FIXES
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* 1. Base Wrapper Adjustment */
+  .home-main-wrapper {
+    margin-top: 60px; /* Navbar ke liye space */
+    gap: 25px;
+    padding: 0 15px;
+  }
+
+  /* 2. Modern Hero Slider (Bada Challenge) */
+  .hero-modern-slider {
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .slider-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .hero-title {
+    font-size: 32px; /* Font size mobile ke liye chota */
+    margin: 15px 0;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  .slider-right-image img {
+    max-height: 250px; /* Mobile pe image size control */
+    margin-top: 30px;
+  }
+
+  /* 3. Flash Sale Section */
+  .flash-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .flash-title-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .timer-unit-box {
+    padding: 8px 10px;
+  }
+
+  .timer-unit-box span {
+    font-size: 1.2rem;
+  }
+
+  .flash-slide-group {
+    flex-direction: column; /* Mobile pe ek ke niche ek items */
+    gap: 15px;
+  }
+
+  .flash-item-card {
+    height: 300px;
+    min-width: 100%;
+  }
+
+  /* 4. Popular Categories (Circle Icons) */
+  .categories-flex {
+    justify-content: center;
+    gap: 15px; /* Mobile pe gap kam */
+  }
+
+  .circle-img-box {
+    width: 70px; /* Icons thode chote */
+    height: 70px;
+  }
+
+  .category-name {
+    font-size: 10px;
+  }
+
+  /* 5. Policies Section */
+  .home-policies-section {
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px 15px;
+  }
+
+  .policy-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+  }
+
+  .policy-item:last-child {
+    border-bottom: none;
+  }
+
+  /* 6. Subscribe Bar */
+  .sub-input-group {
+    flex-direction: column;
+    border-radius: 15px;
+    border: none;
+  }
+
+  .sub-input-group input {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+  }
+
+  .sub-button-theme {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  /* 7. Flash Sale Grid (If using Grid instead of Slider) */
+  .flash-sale-grid {
+    grid-template-columns: 1fr; /* Single column on small screens */
+  }
+}
+
+/* Extra small screens fix (iPhone SE etc.) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 28px;
+  }
+  
+  .compact-header h2 {
+    font-size: 1.4rem;
+  }
+}

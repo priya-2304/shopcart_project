@@ -1,0 +1,286 @@
+/* Custom Theme Variables */
+:root {
+    --theme-primary: #E16C5B;
+    --theme-dark: #3d1f1a;
+    --text-muted: #7a6a67;
+}
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.login-card {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+/* LEFT SIDE - BRANDING */
+.login-branding {
+    flex: 1;
+    min-width: 350px;
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+}
+
+.branding-img {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.branding-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--theme-dark), transparent);
+    z-index: 1;
+}
+
+.branding-content {
+    position: relative;
+    z-index: 2;
+}
+
+.login-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.logo-icon-svg {
+    font-size: 30px;
+    color: var(--theme-primary);
+}
+
+.logo-name {
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.branding-title {
+    font-size: 36px;
+    color: #fff;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.branding-title span {
+    color: var(--theme-primary);
+}
+
+.branding-text {
+    color: #ccc;
+    font-size: 14px;
+    margin-top: 15px;
+    max-width: 300px;
+}
+
+/* RIGHT SIDE - FORM */
+.login-form-container {
+    flex: 1;
+    min-width: 350px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-header h3 {
+    font-size: 28px;
+    color: var(--theme-dark);
+}
+
+.form-header p {
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+.login-form {
+    margin-top: 40px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--theme-dark);
+    margin-bottom: 8px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+    padding: 8px 0;
+    transition: 0.3s;
+}
+
+.input-wrapper:focus-within {
+    border-color: var(--theme-primary);
+}
+
+.input-icon {
+    color: #aaa;
+    margin-right: 12px;
+}
+
+.input-wrapper input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    color: var(--theme-dark);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.remember-me {
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.forgot-pass {
+    color: var(--theme-primary);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login-btn {
+    width: 100%;
+    background-color: var(--theme-primary);
+    color: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 10px 20px rgba(225, 108, 91, 0.3);
+    transition: 0.3s;
+}
+
+/* Final Mobile Responsive Fixes */
+@media (max-width: 768px) {
+    .login-page {
+        padding: 10px; /* Thoda sa margin side mein */
+    }
+
+    .login-card { 
+        flex-direction: column; 
+        border-radius: 20px; /* Mobile pe choti radius achhi lagti hai */
+    }
+
+    .login-branding { 
+        min-height: 200px; /* Height kam kar di taaki form upar dikhe */
+        padding: 30px 20px;
+        align-items: center; /* Content ko center kiya */
+        text-align: center;
+    }
+
+    .branding-img {
+        opacity: 0.5; /* Mobile pe background thoda aur light */
+    }
+
+    .branding-title {
+        font-size: 24px; /* Title chota kiya */
+    }
+
+    .branding-text {
+        display: none; /* Mobile pe zyada text clutter karta hai, isliye hide kar diya */
+    }
+
+    .login-form-container { 
+        padding: 40px 25px; 
+        min-width: 100%;
+    }
+
+    .form-header h3 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .form-header p {
+        text-align: center;
+    }
+
+    .form-options {
+        flex-direction: column; /* Remember me aur Forgot pass ek ke niche ek */
+        gap: 15px;
+        text-align: center;
+    }
+
+    .login-btn {
+        padding: 14px;
+        font-size: 16px;
+    }
+}
+
+/* For Very Small Screens (iPhone 5/SE style) */
+@media (max-width: 400px) {
+    .login-branding {
+        min-height: 150px;
+    }
+    
+    .login-logo {
+        justify-content: center;
+    }
+    
+    .branding-title {
+        font-size: 20px;
+    }
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px rgba(225, 108, 91, 0.4);
+}
+
+.form-footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.create-acc {
+    color: var(--theme-dark);
+    font-weight: 700;
+    border-bottom: 2px solid var(--theme-primary);
+    cursor: pointer;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .login-card { flex-direction: column; }
+    .login-form-container { padding: 30px; }
+    .login-branding { min-height: 250px; padding: 20px; }
+}

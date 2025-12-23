@@ -1,0 +1,280 @@
+:root {
+  --primary-coral: #E16C5B;
+  --dark-plum: #462C2F;
+  --light-bg: #FAF9F8;
+  --soft-gray: #757575;
+}
+
+.p-details-wrapper {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 120px 20px 80px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.p-breadcrumb {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: var(--soft-gray);
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.p-main-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+}
+
+/* Gallery Styling */
+.p-gallery-container { display: flex; gap: 20px; }
+
+.p-thumb-stack { display: flex; flex-direction: column; gap: 12px; }
+
+.p-thumb-box {
+  width: 80px;
+  height: 100px;
+  border: 1px solid #eee;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.p-thumb-box:hover { border-color: var(--primary-coral); }
+
+.p-thumb-box img { width: 100%; height: 100%; object-fit: cover; }
+
+.p-main-display {
+  flex-grow: 1;
+  background: var(--light-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-main-display img {
+  max-width: 100%;
+  max-height: 750px;
+  transition: transform 0.5s ease;
+}
+
+.p-main-display:hover img { transform: scale(1.05); }
+
+/* Info Section Styling */
+.p-brand-label {
+  color: var(--primary-coral);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+.p-product-title {
+  font-size: 36px;
+  color: var(--dark-plum);
+  font-weight: 600;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.p-rating-strip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.p-stars { color: #FFB400; font-size: 14px; }
+
+.p-rev-text { color: var(--soft-gray); font-size: 13px; text-decoration: underline; }
+
+.p-price-row { margin-bottom: 35px; }
+
+.p-price-val {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.p-tax-tag {
+  display: block;
+  font-size: 12px;
+  color: #2e7d32;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+/* Size Selection */
+.p-size-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.p-size-chart { color: var(--primary-coral); cursor: pointer; border-bottom: 1px dashed; }
+
+.p-size-grid { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.p-size-btn {
+  padding: 12px 24px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+  min-width: 60px;
+}
+
+.p-size-btn.active {
+  background: var(--dark-plum);
+  color: #fff;
+  border-color: var(--dark-plum);
+}
+
+.p-btn-cart, .p-btn-buy {
+  flex: 1;
+  padding: 20px;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 1px;
+}
+
+.p-btn-cart {
+  background: transparent;
+  border: 2px solid var(--dark-plum);
+  color: var(--dark-plum);
+}
+
+.p-btn-cart:hover { background: var(--dark-plum); color: #fff; }
+
+.p-btn-buy {
+  background: var(--primary-coral);
+  border: none;
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(225, 108, 91, 0.2);
+}
+
+.p-btn-buy:hover { transform: translateY(-3px); background: #c85a4a; }
+
+.p-btn-wish.liked { color: var(--primary-coral); border-color: var(--primary-coral); }
+
+.p-trust-item svg { font-size: 18px; color: var(--dark-plum); }
+
+/* Accordion */
+.p-accordion-section details {
+  border-bottom: 1px solid #eee;
+  padding: 20px 0;
+}
+
+.p-accordion-section summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--dark-plum);
+}
+
+.p-desc-content {
+  padding-top: 15px;
+  font-size: 14px;
+  color: var(--soft-gray);
+  line-height: 1.8;
+}
+
+/* Mobile Responsive */
+@media (max-width: 950px) {
+  .p-main-grid { grid-template-columns: 1fr; }
+  .p-gallery-container { flex-direction: column-reverse; }
+  .p-thumb-stack { flex-direction: row; }
+  .p-action-row { flex-direction: column; }
+  .p-btn-wish { align-self: center; }
+}
+
+/* Star Rating Colors */
+.p-stars-input { display: flex; gap: 5px; cursor: pointer; font-size: 18px; }
+.star-active { color: #FFB400; transition: 0.2s; }
+.star-empty { color: #e0e0e0; transition: 0.2s; }
+
+/* Sleek Button Fixes */
+.p-action-row {
+  display: flex;
+  gap: 12px;
+  margin: 30px 0;
+  align-items: center;
+}
+
+.p-sleek {
+  padding: 14px 20px !important; /* Size kam kar diya */
+  font-size: 13px !important;    /* Text thoda chota */
+  border-radius: 8px !important; /* Zyada rounded ki jagah thoda boxy modern look */
+  letter-spacing: 0.5px;
+}
+
+.p-btn-wish-round {
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Trust Grid Refinement */
+.p-trust-grid {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.p-trust-item span { font-size: 10px; font-weight: 600; text-transform: uppercase; }
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .p-sleek { padding: 12px 10px !important; font-size: 11px !important; }
+}
+
+.p-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  color: var(--dark-plum);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 8px 0;
+  transition: 0.3s ease;
+  width: fit-content;
+}
+
+.p-back-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.p-back-btn:hover {
+  color: var(--primary-coral);
+}
+
+.p-back-btn:hover svg {
+  transform: translateX(-5px); /* Arrow thoda peeche move hoga hover par */
+}
+
+/* Breadcrumb ko thoda margin de dete hain back button ke baad */
+.p-breadcrumb {
+  margin-top: 10px;
+}
