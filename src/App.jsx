@@ -34,8 +34,6 @@ function AppLayout() {
   const authPages = ["/login", "/signup", "/forgot-password"];
   const isAuthPage = authPages.includes(location.pathname);
 
-  // --- YE RHA TERA GUARD ---
-  // Agar user login nahi hai aur kisi auth page pe bhi nahi hai, toh seedha Login bhejo
   if (!isAuthenticated && !isAuthPage) {
     return <Navigate to="/login" replace />;
   }
@@ -49,8 +47,7 @@ function AppLayout() {
         <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        
-        {/* Protected Routes (Login ke baad hi dikhenge) */}
+    
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<ProductDetails />} />
@@ -66,7 +63,6 @@ function AppLayout() {
         <Route path="/return-policy" element={<ReturnPolicy />} />
         <Route path="/delivery-info" element={<DeliveryInfo />} />
 
-        {/* Galat URL pe Login ya Home pe redirect */}
         <Route path="*" element={<Navigate to={isAuthenticated ? "/" : "/login"} replace />} />
       </Routes>
 

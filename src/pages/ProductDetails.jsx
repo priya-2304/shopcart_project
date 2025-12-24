@@ -36,8 +36,8 @@ export default function ProductDetails() {
     <div className="p-details-wrapper" style={{ maxWidth: '1400px', margin: '0 auto', padding: '20px' }}>
       
       {/* TOP NAVIGATION - Clean & Balanced */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
-        <button onClick={() => navigate("/products")} style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'none', border: '1px solid #ddd', padding: '8px 16px', borderRadius: '50px', cursor: 'pointer', color: '#462C2F', fontWeight: '600', transition: '0.3s' }} onMouseOver={(e) => e.currentTarget.style.borderColor = '#E16C5B'}>
+      <div className="p-top-nav-mobile" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
+        <button className="p-back-btn-modern" onClick={() => navigate("/products")} style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'none', border: '1px solid #ddd', padding: '8px 16px', borderRadius: '50px', cursor: 'pointer', color: '#462C2F', fontWeight: '600', transition: '0.3s' }} onMouseOver={(e) => e.currentTarget.style.borderColor = '#E16C5B'}>
           <FaArrowLeft /> Back to Shop
         </button>
         <button onClick={() => navigate("/products")} style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'none', border: 'none', cursor: 'pointer', color: '#E16C5B', fontWeight: '700', fontSize: '15px' }}>
@@ -51,10 +51,11 @@ export default function ProductDetails() {
       <div className="p-main-grid">
         <div className="p-gallery-container">
           <div className="p-thumb-stack">
-            {[1, 2, 3].map((_, i) => (
-              <div key={i} className="p-thumb-box" onClick={() => setMainImg(product.image)}>
-                <img src={`/${product.image}`} alt="preview" />
-              </div>
+            {product.subImages && product.subImages.map((imgUrl, i) => (
+              <div key={i} className="p-thumb-box" onClick={() => setMainImg(imgUrl)} 
+          style={{ cursor: 'pointer', border: mainImg === imgUrl ? '2px solid #E16C5B' : '1px solid #ddd' }} >
+          <img src={`/${imgUrl}`} alt={`preview-${i}`} />
+        </div>
             ))}
           </div>
           <div className="p-main-display">
@@ -85,8 +86,11 @@ export default function ProductDetails() {
             </div>
           </div>
           <div className="p-action-row">
+           <div className="p-btn-group-mobile">
             <button className="p-btn-cart p-sleek" onClick={() => addToCart({...product, size: selectedSize})}>ADD TO BAG</button>
             <button className="p-btn-buy p-sleek" onClick={() => { addToCart({...product, size: selectedSize}); navigate("/cart"); }}>BUY NOW</button>
+            </div>
+            
             <button className={`p-btn-wish-round ${isLiked ? 'liked' : ''}`} onClick={() => toggleWishlist(product)}>
               {isLiked ? <FaHeart color="#E16C5B" /> : <FaRegHeart />}
             </button>

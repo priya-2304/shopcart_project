@@ -1,167 +1,41 @@
 .navbar {
-
-
-
   top: 0;
-
-
-
   width: 100%;
-
-
-
   height: 70px;
-
-
-
   background: linear-gradient(90deg, #713C46, #462C2F);
-
-
-
   display: flex;
-
-
-
   align-items: center;
-
-
-
   padding: 0 24px;
-
-
-
   z-index: 1000;
-
-
-
 }
-
-
-
-
-
-
-
 /* ===== LOGO ===== */
-
-
-
 .logo {
-
-
-
   display: flex;
-
-
-
   align-items: center;
-
-
-
   gap: 8px;
-
-
-
   text-decoration: none;
-
-
-
   flex-shrink: 0;
-
-
-
   margin-right: 200px;
-
-
-
 }
-
-
-
-
-
-
 
 .logo-icon {
-
-
-
   font-size: 22px;
-
-
-
   color: #E16C5B;
-
-
-
 }
-
-
-
-
-
-
 
 .logo-text {
-
-
-
   color: #EEEEEE;
-
-
-
   font-size: 20px;
-
-
-
   font-weight: 600;
-
-
-
 }
-
-
-
-
-
-
-
 /* ===== CENTER LINKS ===== */
-
-
-
 .nav-center {
-
-
-
   display: flex;
-
-
-
   gap: 30px;
-
-
-
   margin-left: 40px;
-
-
-
   margin-right: 16px;
-
-
-
   justify-content: center;
-
-
-
 }
-
-
-
-
-
-
-
 .nav-center a {
 
 
@@ -495,275 +369,523 @@
 
 
   color: #462C2F;
-
-
-
   border-radius: 6px;
-
-
-
   padding: 10px;
-
-
-
   min-width: 140px;
-
-
-
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-
-
-
 }
-
-
-
-
-
-
 
 .profile-dropdown a,
-
-
-
 .profile-dropdown button {
-
-
-
   display: block;
-
-
-
   padding: 6px 0;
-
-
-
   text-decoration: none;
-
-
-
   color: #462C2F;
-
-
-
   background: none;
-
-
-
   border: none;
-
-
-
   text-align: left;
-
-
-
   cursor: pointer;
-
-
-
 }
-
-
-
-
-
-
-
 .profile-dropdown a:hover,
-
-
-
 .profile-dropdown button:hover {
-
-
-
   color: #E16C5B;
-
-
-
 }
-
-
-
-
-
-
 
 /* ===== PAGE OFFSET ===== */
-
-
-
 .page {
-
-
-
   padding-top: 90px;
-
-
-
 }
-
-
-
-
-
-
 
 /* ===== RESPONSIVE ===== */
-
-
-
 @media (max-width: 900px) {
-
-
-
   .nav-center {
-
-
-
     display: none;
-
-
-
   }
-
-
-
 }
-
-
-
-
-
-
-
 @media (max-width: 600px) {
-
-
-
   .search-box {
-
-
-
     display: none;
-
-
-
   }
-
-
-
 }
-
-
-
 .profile-wrapper {
-
   position: relative;
-
   display: inline-block;
-
 }
-
-
-
 .profile-dropdown {
-
   position: absolute;
-
   top: 100%;
-
   right: 0;
-
   background: white;
-
   min-width: 150px;
-
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-
   border-radius: 8px;
-
   padding: 10px 0;
-
   z-index: 1000;
-
   display: flex;
-
   flex-direction: column;
-
 }
-
-
-
 .profile-dropdown a, .profile-dropdown button {
-
   padding: 10px 20px;
-
   text-decoration: none;
-
   color: #333;
-
   font-size: 14px;
-
   text-align: left;
-
   border: none;
-
   background: none;
-
   width: 100%;
-
   cursor: pointer;
-
   font-family: inherit;
-
 }
-
-
-
 .profile-dropdown a:hover, .profile-dropdown button:hover {
-
   background-color: #f5f5f5;
-
   color: #E16C5B;
-
 }
-
-
 
 .logout-btn {
-
   color: #E16C5B !important;
-
   font-weight: bold;
-
+}
+@media (max-width: 768px) {
+  .nav-center {
+    display: none; /* Mobile pe beech wale links chhupa do */
+  }
+  .search-box {
+    width: 110px !important;
+    padding: 4px 8px !important;
+   }
+   .search-box input {
+    width: 70px !important;
+  }
+  .logo-text {
+    font-size: 1.2rem;
+  }
+}
+ 
+/* --- DESKTOP VS MOBILE VISIBILITY --- */
+.mobile-bottom-nav {
+  display: none; /* Desktop par band */
 }
 
+@media (max-width: 768px) {
+  /* Desktop specific elements hide karo */
+  .desktop-only, .search-box {
+    display: none !important;
+  }
 
+  .logo {
+    margin-right: 0;
+  }
+
+  .navbar {
+    height: 60px;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+
+  /* --- BOTTOM BAR STYLING --- */
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background: #462C2F; /* Theme color */
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #713C46;
+    z-index: 2000;
+  }
+
+  .mob-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #EEEEEE;
+    font-size: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .mob-nav-item svg {
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+  .mobile-visible-heart {
+    display: flex !important;
+  }
+
+  /* --- MOBILE SUB-MENU (FOR MORE & PROFILE) --- */
+  .mob-sub-menu {
+    position: absolute;
+    bottom: 70px;
+    right: -10px;
+    background: #EEEEEE;
+    min-width: 160px;
+    border-radius: 8px;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.3);
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mob-sub-menu a, .mob-sub-menu button {
+    padding: 12px 20px;
+    color: #462C2F;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+  }
+
+  .mob-sub-menu a:hover {
+    background: #f5f5f5;
+    color: #E16C5B;
+  }
+
+  /* Page content ke niche space taaki bar content na chhupaye */
+  body {
+    padding-bottom: 70px;
+  }
+}
+
+/* Hide mobile-only elements on desktop */
+.mobile-bottom-nav, .mobile-menu-trigger, .mob-sub-menu {
+  display: none;
+}
 
 @media (max-width: 768px) {
-
-  .nav-center {
-
-    display: none; /* Mobile pe beech wale links chhupa do */
-
+  /* 1. Hide Desktop specific stuff */
+  .desktop-only {
+    display: none !important;
   }
 
- 
-
-  .search-box {
-
-    width: 120px; /* Search box chhota kar do */
-
+  /* Show Mobile Menu Icon next to Logo */
+  .mobile-menu-trigger {
+    display: block;
+    color: #EEEEEE;
+    font-size: 22px;
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
   }
 
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Menu icon aur logo ke beech thodi jagah */
+    flex: 1;
+  }
 
+  .logo {
+    margin-right: 0;
+  }
 
   .logo-text {
-
-    font-size: 1.2rem;
-
+    font-size: 18px;
   }
 
+  /* 2. Top Right Icons (Search & Heart) */
+  .nav-right {
+    display: flex !important;
+   align-items: center !important;
+    gap: 10px !important;       /* Icons ke beech ki doori */
+    flex-shrink: 0 !important;  /* Ye icons ko sikadne se rokega */
+    justify-content: flex-end;
+    margin-left: auto !important;
+  }
+
+  /* Heart icon ensure visibility */
+  .nav-right .icon-btn {
+    display: flex !important;
+    font-size: 1.2rem;
+    color: #EEEEEE;
+  }
+
+  /* 3. Bottom Navigation Bar */
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background: #462C2F;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #713C46;
+    z-index: 2000;
+  }
+
+  .mob-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #EEEEEE;
+    font-size: 11px;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .mob-icon-wrapper {
+    position: relative;
+  }
+
+  .mob-nav-item svg {
+    font-size: 20px;
+    margin-bottom: 3px;
+  }
+
+  /* Sub-menus styling */
+  .mob-sub-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: #EEEEEE;
+    min-width: 150px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 3000;
+    padding: 5px 0;
+  }
+
+  /* Position for Left Menu (About/Contact) */
+  .left-align {
+    top: 40px;
+    left: 0;
+  }
+
+  /* Position for Right Menu (Profile) */
+  .right-align {
+    bottom: 70px;
+    right: 0;
+  }
+
+  .mob-sub-menu a, .mob-sub-menu button {
+    padding: 12px 15px;
+    color: #462C2F;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    background: none;
+    width: 100%;
+  }
+
+  body {
+    padding-bottom: 75px;
+  }
+
+  .badge {
+    top: -5px;
+    right: -5px;
+    padding: 1px 4px;
+    font-size: 10px;
+  }
+}
+
+/* Desktop par dono dikhenge */
+.cart-desktop-only {
+  display: block;
+}
+
+/* Mobile screen (950px se niche) par upar wala cart hide kardo */
+@media (max-width: 950px) {
+  .cart-desktop-only {
+    display: none !important;
+  }
+}
+
+/* RESET & BASE */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(90deg, #713C46, #462C2F);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.nav-left { display: flex; align-items: center; gap: 15px; }
+.logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.logo-icon { font-size: 22px; color: #E16C5B; }
+.logo-text { color: #EEEEEE; font-size: 20px; font-weight: 600; }
+
+.nav-center { display: flex; gap: 25px; flex: 1; justify-content: center; }
+.nav-center a { color: #EEEEEE; text-decoration: none; font-weight: 500; }
+
+.nav-right { display: flex; align-items: center; gap: 15px; }
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #EEEEEE;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+.search-box input { border: none; outline: none; background: transparent; width: 150px; }
+
+.icon-btn { position: relative; color: #EEEEEE; font-size: 20px; text-decoration: none; }
+.badge {
+  position: absolute; top: -8px; right: -8px; background: #E16C5B;
+  color: white; font-size: 10px; padding: 2px 6px; border-radius: 50%;
+}
+
+.mobile-bottom-nav, .mobile-menu-trigger { display: none; }
+
+/* ===== MOBILE TRANSFORMATION (768px se niche) ===== */
+@media screen and (max-width: 768px) {
+  /* 1. Desktop elements ki chutti */
+  .desktop-only, 
+  .logo-text,
+  .cart-link-top { 
+    display: none !important; 
+  }
+
+  /* 2. Search Box ko zinda rakho */
+  .search-box.mobile-search-fix {
+    display: flex !important;
+    width: 110px !important;
+    margin: 0 5px;
+  }
+  .search-box.mobile-search-fix input { width: 100%; font-size: 11px; }
+
+  /* 3. Header alignment */
+  .navbar { height: 60px; padding: 0 10px; justify-content: space-between; }
+  .mobile-menu-trigger { display: block; color: #fff; font-size: 20px; }
+  
+  .nav-right { gap: 10px !important; }
+
+  /* 4. Bottom Nav styling */
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #462C2F;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #713C46;
+    z-index: 2000;
+  }
+  .mob-nav-item { color: #fff; text-decoration: none; display: flex; flex-direction: column; align-items: center; font-size: 10px; }
+  .mob-nav-item svg { font-size: 18px; margin-bottom: 2px; }
+
+  body { padding-bottom: 60px; }
+}
+
+/* Mobile View Fixes (768px and below) */
+@media screen and (max-width: 768px) {
+  
+  /* 1. Upar wala Cart Icon - Pakka Delete */
+  .top-cart-icon, 
+  .nav-right .desktop-only {
+    display: none !important; /* Forceful removal */
+    visibility: hidden !important;
+  }
+
+  /* 2. Search Box Layout - Taki Heart ke sath fit ho jaye */
+  .search-box {
+    display: flex !important;
+    width: 120px !important; /* Thoda chota kiya taaki jagah bane */
+    margin-right: 5px !important;
+  }
+
+  .logo-text {
+  display: block !important;       /* Ye sabse zaroori hai */
+    visibility: visible !important;  /* Agar hidden ho toh dikh jaye */
+    font-size: 16px !important;      /* Mobile ke hisaab se thoda chota size */
+    color: #EEEEEE !important;       /* White color ensure karne ke liye */
+    margin-left: 5px;
+  }
+ .search-box.mobile-search-fix {
+    width: 100px !important;         /* Width thodi aur kam kari */
+  }
+  /* 3. Right Icons spacing */
+  .nav-right {
+    gap: 8px !important;
+    margin-left: auto !important;
+  }
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(90deg, #713C46, #462C2F);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  z-index: 1000;
+}
+
+.logo { display: flex; align-items: center; gap: 8px; text-decoration: none; flex-shrink: 0; }
+.logo-icon { font-size: 22px; color: #E16C5B; }
+.logo-text { color: #EEEEEE; font-size: 20px; font-weight: 600; }
+
+.nav-center { display: flex; gap: 30px; flex: 1; justify-content: center; }
+.nav-center a { color: #EEEEEE; text-decoration: none; font-weight: 500; font-size: 17px; }
+.nav-center a:hover { color: #E16C5B; }
+
+.search-box { display: flex; align-items: center; gap: 6px; background: #EEEEEE; padding: 6px 14px; border-radius: 22px; }
+.search-box input { border: none; outline: none; width: 170px; font-size: 13px; background: transparent; }
+
+.nav-right { display: flex; align-items: center; gap: 18px; }
+.icon-btn { position: relative; color: #EEEEEE; font-size: 22px; cursor: pointer; display: flex; align-items: center; text-decoration: none; }
+.badge { position: absolute; top: -6px; right: -8px; background: #E16C5B; color: #462C2F; font-size: 11px; padding: 2px 6px; border-radius: 50%; font-weight: bold; }
+
+/* Desktop Profile Dropdown */
+.profile-wrapper { position: relative; }
+.profile-dropdown {
+  position: absolute; top: 100%; right: 0; background: white; min-width: 150px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 8px; padding: 10px 0; z-index: 1000;
+  display: flex; flex-direction: column;
+}
+.profile-dropdown a, .profile-dropdown button { padding: 10px 20px; text-decoration: none; color: #333; font-size: 14px; text-align: left; border: none; background: none; cursor: pointer; }
+
+.mobile-bottom-nav, .mobile-menu-trigger { display: none; }
+
+/* ===== MOBILE VIEW (768px) ===== */
+@media screen and (max-width: 768px) {
+  .desktop-only, .top-cart-icon { display: none !important; }
+
+  .navbar { height: 60px; padding: 0 15px; justify-content: space-between; }
+  
+  .logo-text { display: block !important; font-size: 16px !important; color: #EEEEEE !important; }
+  
+  .mobile-menu-trigger { display: block; color: #EEEEEE; font-size: 22px; cursor: pointer; }
+
+  .search-box { width: 100px !important; padding: 4px 8px !important; }
+  .search-box input { width: 70px !important; }
+
+  .mobile-bottom-nav {
+    display: flex; position: fixed; bottom: 0; left: 0; width: 100%; height: 65px;
+    background: #462C2F; justify-content: space-around; align-items: center; border-top: 1px solid #713C46; z-index: 2000;
+  }
+
+  .mob-nav-item { display: flex; flex-direction: column; align-items: center; color: #EEEEEE; font-size: 11px; text-decoration: none; position: relative; cursor: pointer; }
+  .mob-nav-item svg { font-size: 20px; margin-bottom: 3px; }
+
+  /* Bottom Profile Dropdown Fix */
+  .mob-sub-menu.right-align {
+    position: absolute; bottom: 70px; right: 0; background: #EEEEEE; min-width: 150px;
+    border-radius: 8px; box-shadow: 0 -4px 15px rgba(0,0,0,0.3); z-index: 3000; display: flex; flex-direction: column;
+  }
+  .mob-sub-menu a, .mob-sub-menu button { padding: 12px 15px; color: #462C2F; text-decoration: none; display: flex; align-items: center; border: none; background: none; text-align: left; width: 100%; }
+
+  body { padding-bottom: 75px; }
 }

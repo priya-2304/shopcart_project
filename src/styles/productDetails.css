@@ -273,8 +273,55 @@
 .p-back-btn:hover svg {
   transform: translateX(-5px); /* Arrow thoda peeche move hoga hover par */
 }
-
 /* Breadcrumb ko thoda margin de dete hain back button ke baad */
 .p-breadcrumb {
   margin-top: 10px;
+}
+
+/* Mobile Responsive Refinement */
+@media (max-width: 950px) {
+  .p-main-grid { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .p-gallery-container { 
+    flex-direction: column-reverse; 
+  }
+  
+  .p-thumb-stack { 
+    flex-direction: row; 
+    overflow-x: auto; /* Agar images zyada ho toh scroll ho jayein */
+    padding-bottom: 5px;
+  }
+
+  /* Action Row fix for Mobile */
+  .p-action-row {
+    display: flex;
+    flex-direction: row !important; /* Force row on mobile */
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .p-btn-group-mobile {
+    display: flex;
+    gap: 8px;
+    flex: 1; /* Ye buttons baaki jagah le lenge */
+  }
+
+  .p-btn-cart, .p-btn-buy {
+    flex: 1;
+    padding: 12px 5px !important; /* Mobile par thoda chota */
+    font-size: 11px !important;
+  }
+
+  .p-btn-wish-round {
+    min-width: 45px; /* Ye right side mein fix rahega */
+    height: 45px;
+    border-radius: 12px;
+  }
+  .p-details-wrapper {
+    padding-bottom: 100px; /* Taaki niche wala nav bar content ko chhupa na de */
+  }
 }

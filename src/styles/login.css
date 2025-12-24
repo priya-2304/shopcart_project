@@ -1,9 +1,10 @@
-/* Custom Theme Variables */
 :root {
     --theme-primary: #E16C5B;
     --theme-dark: #3d1f1a;
     --text-muted: #7a6a67;
 }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 .login-page {
     min-height: 100vh;
@@ -11,36 +12,51 @@
     align-items: center;
     justify-content: center;
     background-color: #f9f9f9;
-    padding: 20px;
+    padding: 15px; /* Mobile spacing */
 }
 
 .login-card {
     max-width: 1000px;
     width: 100%;
     display: flex;
+    flex-direction: column; /* Default: Mobile column */
     background: #fff;
-    border-radius: 30px;
+    border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     overflow: hidden;
-    flex-wrap: wrap;
 }
 
-/* LEFT SIDE - BRANDING */
+/* DESKTOP VIEW - Row Layout */
+@media (min-width: 769px) {
+    .login-card {
+        flex-direction: row;
+        border-radius: 30px;
+    }
+}
+
+/* BRANDING SECTION */
 .login-branding {
     flex: 1;
-    min-width: 350px;
     position: relative;
-    min-height: 400px;
+    min-height: 200px; /* Small for mobile */
     display: flex;
     align-items: flex-end;
-    padding: 40px;
+    padding: 30px 20px;
+}
+
+@media (min-width: 769px) {
+    .login-branding {
+        min-height: 550px;
+        padding: 40px;
+        min-width: 400px;
+    }
 }
 
 .branding-img {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     object-fit: cover;
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
 .branding-overlay {
@@ -53,79 +69,76 @@
 .branding-content {
     position: relative;
     z-index: 2;
+    width: 100%;
 }
 
 .login-logo {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .logo-icon-svg {
-    font-size: 30px;
+    font-size: 24px;
     color: var(--theme-primary);
 }
 
 .logo-name {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 800;
     color: #fff;
 }
 
 .branding-title {
-    font-size: 36px;
+    font-size: 22px;
     color: #fff;
     font-weight: 800;
     line-height: 1.2;
 }
 
-.branding-title span {
-    color: var(--theme-primary);
+@media (min-width: 769px) {
+    .branding-title { font-size: 36px; }
+    .logo-icon-svg { font-size: 30px; }
+    .logo-name { font-size: 24px; }
 }
 
-.branding-text {
-    color: #ccc;
-    font-size: 14px;
-    margin-top: 15px;
-    max-width: 300px;
-}
+.branding-title span { color: var(--theme-primary); }
 
-/* RIGHT SIDE - FORM */
+/* FORM SECTION */
 .login-form-container {
-    flex: 1;
-    min-width: 350px;
-    padding: 60px;
+    flex: 1.2;
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+@media (min-width: 769px) {
+    .login-form-container { padding: 60px; }
+}
+
 .form-header h3 {
-    font-size: 28px;
+    font-size: 24px;
     color: var(--theme-dark);
 }
 
 .form-header p {
     color: var(--text-muted);
-    margin-top: 5px;
+    font-size: 14px;
 }
 
-.login-form {
-    margin-top: 40px;
-}
+.login-form { margin-top: 30px; }
 
-.input-group {
-    margin-bottom: 25px;
-}
+.input-group { margin-bottom: 20px; }
 
 .input-group label {
     display: block;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--theme-dark);
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
 .input-wrapper {
@@ -136,14 +149,9 @@
     transition: 0.3s;
 }
 
-.input-wrapper:focus-within {
-    border-color: var(--theme-primary);
-}
+.input-wrapper:focus-within { border-color: var(--theme-primary); }
 
-.input-icon {
-    color: #aaa;
-    margin-right: 12px;
-}
+.input-icon { color: #aaa; margin-right: 12px; }
 
 .input-wrapper input {
     border: none;
@@ -156,26 +164,20 @@
 .form-options {
     display: flex;
     justify-content: space-between;
-    font-size: 14px;
-    margin-bottom: 30px;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 25px;
 }
 
-.remember-me {
-    color: var(--text-muted);
-    cursor: pointer;
-}
+.remember-me { color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 5px; }
 
-.forgot-pass {
-    color: var(--theme-primary);
-    font-weight: 600;
-    cursor: pointer;
-}
+.forgot-pass { color: var(--theme-primary); font-weight: 600; text-decoration: none; }
 
 .login-btn {
     width: 100%;
     background-color: var(--theme-primary);
     color: #fff;
-    padding: 16px;
+    padding: 14px;
     border-radius: 12px;
     border: none;
     font-weight: 700;
@@ -184,88 +186,17 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    box-shadow: 0 10px 20px rgba(225, 108, 91, 0.3);
+    box-shadow: 0 10px 20px rgba(225, 108, 91, 0.2);
     transition: 0.3s;
-}
-
-/* Final Mobile Responsive Fixes */
-@media (max-width: 768px) {
-    .login-page {
-        padding: 10px; /* Thoda sa margin side mein */
-    }
-
-    .login-card { 
-        flex-direction: column; 
-        border-radius: 20px; /* Mobile pe choti radius achhi lagti hai */
-    }
-
-    .login-branding { 
-        min-height: 200px; /* Height kam kar di taaki form upar dikhe */
-        padding: 30px 20px;
-        align-items: center; /* Content ko center kiya */
-        text-align: center;
-    }
-
-    .branding-img {
-        opacity: 0.5; /* Mobile pe background thoda aur light */
-    }
-
-    .branding-title {
-        font-size: 24px; /* Title chota kiya */
-    }
-
-    .branding-text {
-        display: none; /* Mobile pe zyada text clutter karta hai, isliye hide kar diya */
-    }
-
-    .login-form-container { 
-        padding: 40px 25px; 
-        min-width: 100%;
-    }
-
-    .form-header h3 {
-        font-size: 24px;
-        text-align: center;
-    }
-
-    .form-header p {
-        text-align: center;
-    }
-
-    .form-options {
-        flex-direction: column; /* Remember me aur Forgot pass ek ke niche ek */
-        gap: 15px;
-        text-align: center;
-    }
-
-    .login-btn {
-        padding: 14px;
-        font-size: 16px;
-    }
-}
-
-/* For Very Small Screens (iPhone 5/SE style) */
-@media (max-width: 400px) {
-    .login-branding {
-        min-height: 150px;
-    }
-    
-    .login-logo {
-        justify-content: center;
-    }
-    
-    .branding-title {
-        font-size: 20px;
-    }
 }
 
 .login-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 15px 25px rgba(225, 108, 91, 0.4);
+    box-shadow: 0 15px 25px rgba(225, 108, 91, 0.3);
 }
 
 .form-footer {
-    margin-top: 40px;
+    margin-top: 30px;
     text-align: center;
     font-size: 14px;
     color: var(--text-muted);
@@ -274,13 +205,20 @@
 .create-acc {
     color: var(--theme-dark);
     font-weight: 700;
+    text-decoration: none;
     border-bottom: 2px solid var(--theme-primary);
-    cursor: pointer;
 }
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .login-card { flex-direction: column; }
-    .login-form-container { padding: 30px; }
-    .login-branding { min-height: 250px; padding: 20px; }
+.branding-text {
+    color: rgba(255, 255, 255, 0.8); /* Thoda transparent white */
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 15px;
+    max-width: 350px;
+    font-weight: 400;
+    display: none; /* Mobile par hide rakhenge */
+}
+@media (min-width: 769px) {
+    .branding-text {
+        display: block;
+    }
 }

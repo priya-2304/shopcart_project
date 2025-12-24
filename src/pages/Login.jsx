@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom'; // Link add kiya
+import { useNavigate, Link } from 'react-router-dom';
 import { FiMail, FiLock, FiShoppingCart, FiArrowRight } from 'react-icons/fi';
 import "../styles/login.css";
 
@@ -19,6 +19,7 @@ export default function Login({ setIsAuthenticated }) {
   return (
     <div className="login-page">
       <div className="login-card">
+        {/* LEFT SIDE - BRANDING */}
         <div className="login-branding">
           <div className="branding-overlay"></div>
           <img 
@@ -31,10 +32,13 @@ export default function Login({ setIsAuthenticated }) {
               <FiShoppingCart className="logo-icon-svg" />
               <span className="logo-name">SHOPCART</span>
             </div>
-            <h2 className="branding-title">Premium Collections <br /> <span>Now Accessible.</span></h2>
+            <h2 className="branding-title">
+              Premium Collections <br /> <span>Now Accessible.</span>
+            </h2>
           </div>
         </div>
 
+        {/* RIGHT SIDE - FORM */}
         <div className="login-form-container">
           <div className="form-header">
             <h3>Welcome Back</h3>
@@ -46,7 +50,12 @@ export default function Login({ setIsAuthenticated }) {
               <label>Email Address</label>
               <div className="input-wrapper">
                 <FiMail className="input-icon" />
-                <input type="email" placeholder="name@example.com" onChange={(e) => setEmail(e.target.value)} required />
+                <input 
+                  type="email" 
+                  placeholder="name@example.com" 
+                  onChange={(e) => setEmail(e.target.value)} 
+                  required 
+                />
               </div>
             </div>
 
@@ -54,7 +63,12 @@ export default function Login({ setIsAuthenticated }) {
               <label>Password</label>
               <div className="input-wrapper">
                 <FiLock className="input-icon" />
-                <input type="password" placeholder="••••••••" onChange={(e) => setPassword(e.target.value)} required />
+                <input 
+                  type="password" 
+                  placeholder="••••••••" 
+                  onChange={(e) => setPassword(e.target.value)} 
+                  required 
+                />
               </div>
             </div>
 
@@ -62,8 +76,9 @@ export default function Login({ setIsAuthenticated }) {
               <label className="remember-me">
                 <input type="checkbox" /> Remember me
               </label>
-              {/* Forgot Password Link */}
-              <Link to="/forgot-password" size="sm" className="forgot-pass">Forgot Password?</Link>
+              <Link to="/forgot-password" size="sm" className="forgot-pass">
+                Forgot Password?
+              </Link>
             </div>
 
             <button type="submit" className="login-btn">
@@ -73,8 +88,7 @@ export default function Login({ setIsAuthenticated }) {
 
           <div className="form-footer">
             <p>New to Shopcart? 
-              {/* Create Account Link */}
-              <Link to="/signup" className="create-acc">Create Account</Link>
+              <Link to="/signup" className="create-acc"> Create Account</Link>
             </p>
           </div>
         </div>
