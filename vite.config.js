@@ -10,7 +10,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/react-swc'
 
+// Vercel trigger comment
 export default defineConfig({
   plugins: [react()],
-  // Yahan se "base" wali line bilkul delete kar do
 })
