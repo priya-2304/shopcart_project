@@ -1,16 +1,24 @@
-// import { defineConfig } from 'vite'
-// import react from '@vitejs/plugin-react'
+// // import { defineConfig } from 'vite'
+// // import react from '@vitejs/plugin-react'
 
-// // https://vite.dev/config/
+// // // https://vite.dev/config/
+// // export default defineConfig({
+// //   plugins: [react()],
+// // })
+
+
+// import { defineConfig } from 'vite'
+// import react from '@vitejs/react-swc'
+
+// // Vercel trigger comment
 // export default defineConfig({
 //   plugins: [react()],
 // })
 
-
 import { defineConfig } from 'vite'
-import react from '@vitejs/react-swc'
+import react from '@vitejs/plugin-react'
 
-// Vercel trigger comment
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
 })

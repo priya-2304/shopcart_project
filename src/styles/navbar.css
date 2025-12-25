@@ -859,6 +859,18 @@
 
 .mobile-bottom-nav, .mobile-menu-trigger { display: none; }
 
+
+.mobile-search-wrapper {
+  display: none; /* Desktop pe mobile search hide */
+}
+
+.search-box.desktop-only {
+  display: flex; /* Desktop pe default search show */
+  background: var(--light);
+  padding: 5px 10px;
+  border-radius: 5px;
+  align-items: center;
+}
 /* ===== MOBILE VIEW (768px) ===== */
 @media screen and (max-width: 768px) {
   .desktop-only, .top-cart-icon { display: none !important; }
@@ -888,4 +900,158 @@
   .mob-sub-menu a, .mob-sub-menu button { padding: 12px 15px; color: #462C2F; text-decoration: none; display: flex; align-items: center; border: none; background: none; text-align: left; width: 100%; }
 
   body { padding-bottom: 75px; }
+
+ /* 1. TOP NAVBAR: DARK THEME */
+  .navbar {
+    background: var(--dark) !important; /* #462C2F use kiya */
+    border-bottom: 1px solid var(--secondary) !important;
+  }
+
+  /* 2. SEARCH BOX: ICON STYLE ONLY */
+  /* Input chupa diya, bss icon bna diya taaki ganda na lage */
+  .search-box {
+    background: transparent !important;
+    border: none !important;
+    width: auto !important;
+  }
+
+  .search-box input {
+    display: none !important; /* Bss icon dikhega ab mobile pe */
+  }
+
+  .search-box svg {
+    color: var(--primary) !important; /* #E16C5B use kiya */
+    font-size: 1.2rem !important;
+  }
+
+  /* 3. BOTTOM NAV: CLEAN COLOR THEME */
+  .mobile-bottom-nav {
+    background: var(--dark) !important; /* #462C2F */
+    border-top: 2px solid var(--primary) !important; /* #E16C5B line */
+  }
+
+  .mob-nav-item {
+    color: var(--gray) !important; /* #cfd8dc */
+  }
+
+  .mob-nav-item span {
+    color: var(--light) !important; /* #EEEEEE */
+  }
+
+  /* Active state maroon highlight */
+  .mob-nav-item:active svg, 
+  .mob-nav-item.active svg {
+    color: var(--primary) !important;
+  }
+
+  /* Badge Color */
+  .badge {
+    background: var(--primary) !important;
+    color: var(--white) !important;
+  }
+
+  /* Profile Dropdown fix */
+  .mob-sub-menu {
+    background: var(--secondary) !important; /* #713C46 */
+    border: 1px solid var(--primary) !important;
+  } 
+  /* Desktop wala search hide karo mobile pe */
+  .search-box.desktop-only {
+    display: none !important;
+  }
+
+  /* Mobile wala icon show karo */
+  .mobile-search-wrapper {
+    display: flex !important;
+    align-items: center;
+  }
+
+  .search-trigger {
+    color: var(--primary) !important;
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+
+  /* Overlay Search - Shopverse Style */
+  .expanded-search {
+    position: absolute !important;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 90vw !important; /* Poora bar cover karega */
+    background: var(--white) !important;
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    border-radius: 25px;
+    border: 2px solid var(--primary);
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  .expanded-search input {
+    flex: 1;
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    color: #333 !important;
+    padding: 0 10px;
+  }
+
+  .inner-search-icon { color: var(--secondary); }
+  .close-search { color: var(--primary); cursor: pointer; }
+
+  /* Wishlist Icon Safety */
+  .wishlist-top {
+    display: block !important;
+  }
+  .navbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 15px !important;
+    position: relative !important; /* Isse overlay sahi kaam karega */
+  }
+  /* 1. Profile Dropdown Fix (Screen ke andar rakho) */
+  .mob-sub-menu.active {
+    position: absolute !important;
+    bottom: 75px !important; /* Navbar ke upar */
+    right: 10px !important;   /* Right side se thoda andar */
+    left: auto !important;
+    width: 160px !important;
+    background: var(--secondary) !important; /* #713C46 */
+    border: 1px solid var(--primary) !important; /* #E16C5B */
+    border-radius: 12px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.4) !important;
+    z-index: 10001 !important;
+    padding: 5px 0 !important;
+  }
+
+  .mob-sub-menu a, .logout-btn {
+    padding: 12px 15px !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+    font-size: 14px !important;
+    color: var(--white) !important;
+    text-align: left !important;
+  }
+
+  /* 2. Back to Top Button Fix */
+  /* Agar class .back-to-top hai ya koi fixed div hai */
+  .back-to-top, 
+  div[style*="fixed"] button {
+    bottom: 85px !important; /* Navbar (70px) ke upar rakha hai */
+    right: 15px !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: var(--primary) !important;
+    border-radius: 50% !important;
+    z-index: 999 !important;
+  }
+
+  /* 3. Screen Padding Fix (Taaki content navbar ke piche na dabe) */
+  body {
+    padding-bottom: 80px !important; 
+  }
 }

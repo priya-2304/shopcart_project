@@ -277,51 +277,207 @@
 .p-breadcrumb {
   margin-top: 10px;
 }
+/* --- Desktop Recommendations --- */
+.p-sugg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
 
-/* Mobile Responsive Refinement */
-@media (max-width: 950px) {
-  .p-main-grid { 
-    grid-template-columns: 1fr; 
-  }
-  
-  .p-gallery-container { 
-    flex-direction: column-reverse; 
-  }
-  
-  .p-thumb-stack { 
-    flex-direction: row; 
-    overflow-x: auto; /* Agar images zyada ho toh scroll ho jayein */
-    padding-bottom: 5px;
-  }
+.sugg-header-container {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: flex-end; 
+  margin-bottom: 40px;
+  margin-top: 80px;
+  border-top: 2px solid #f0f0f0;
+  padding-top: 40px;
+}
 
-  /* Action Row fix for Mobile */
+.sugg-badge { color: #E16C5B; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; }
+.sugg-main-heading { fontSize: 32px; color: #462C2F; font-weight: 800; }
+.sugg-view-link { color: #462C2F; font-weight: 600; text-decoration: underline; }
+
+/* ===================================================
+   MOBILE FIX: 2x2 Grid (Meesho Style)
+   =================================================== */
+@media (max-width: 768px) {
+  /* 1. Main Layout Fix */
+  .p-main-grid { grid-template-columns: 1fr; }
+  .p-gallery-container { flex-direction: column-reverse; }
+  .p-thumb-stack { flex-direction: row; overflow-x: auto; gap: 10px; }
+
+  /* 2. Action Buttons (Buy/Cart) */
   .p-action-row {
-    display: flex;
-    flex-direction: row !important; /* Force row on mobile */
+    display: flex !important;
+    flex-direction: row !important;
     gap: 10px;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
   }
+  .p-btn-group-mobile { display: flex; gap: 8px; flex: 1; }
+  .p-btn-cart, .p-btn-buy { flex: 1; padding: 12px 5px !important; font-size: 11px !important; }
 
-  .p-btn-group-mobile {
-    display: flex;
-    gap: 8px;
-    flex: 1; /* Ye buttons baaki jagah le lenge */
+  /* 3. RECOMMENDATIONS SECTION (THE CLEANUP) */
+  .p-suggestions-section {
+    margin-top: 40px !important;
+    padding: 20px 10px 100px 10px !important;
+    border-top: 1px solid #eee;
   }
 
-  .p-btn-cart, .p-btn-buy {
-    flex: 1;
-    padding: 12px 5px !important; /* Mobile par thoda chota */
+  /* Header ek line mein */
+  .p-suggestions-section > div:first-child, 
+  .sugg-header-container {
+    display: flex !important;
+    flex-direction: row !important; 
+    justify-content: space-between !important;
+    align-items: center !important;
+    text-align: left !important;
+    margin-bottom: 20px !important;
+  }
+
+  .p-suggestions-section h2, 
+  .sugg-main-heading {
+    font-size: 18px !important;
+    margin: 0 !important;
+  }
+
+  .p-suggestions-section a, 
+  .sugg-view-link {
+    font-size: 12px !important;
+    border: none !important; /* Dappa remove kiya */
+    padding: 0 !important;
+    text-decoration: underline !important;
+  }
+
+  /* 4. 2-COLUMN GRID (MEESHO STYLE) */
+  .p-sugg-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 items per row */
+    gap: 12px !important;
+  }
+
+  /* Card and Image Styling */
+  .p-sugg-grid > a > div, 
+  .sugg-card-box {
+    border-radius: 10px !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+    overflow: hidden;
+  }
+
+  /* Fixing the Image Box */
+  .p-sugg-grid img, 
+  .sugg-img-holder img {
+    height: 180px !important; /* Proper height for 2-col */
+    object-fit: cover;
+  }
+
+  /* Removing extra padding from info */
+  .p-sugg-grid div[style*="padding: 20px"], 
+  .sugg-info-box {
+    padding: 10px !important;
+  }
+
+  .p-sugg-grid h4 { font-size: 14px !important; margin: 0; }
+  .p-sugg-grid p { font-size: 11px !important; margin: 4px 0 !important; }
+  .p-sugg-grid span { font-size: 15px !important; font-weight: bold; }
+
+  /* Buttons hidden inside cards on mobile */
+  .p-sugg-grid button, 
+  .sugg-desktop-btn {
+    display: none !important;
+  }
+
+  /* 1. Header Styling: Heading aur Link ek line mein */
+  .p-suggestions-section > div:first-child, 
+  .sugg-header-container {
+    display: flex !important;
+    flex-direction: row !important; 
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 15px !important;
+    padding: 0 5px !important;
+  }
+
+  .sugg-main-heading, .p-suggestions-section h2 {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #333 !important; /* Professional Dark Grey */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .sugg-view-link, .p-suggestions-section a {
+    font-size: 12px !important;
+    color: #E16C5B !important; /* Primary color */
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    border: none !important; /* Dappa removed */
+  }
+
+  /* 2. 2-COLUMN GRID FIX */
+  .p-sugg-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; 
+    gap: 10px !important;
+    padding: 0 5px !important;
+  }
+
+  /* 3. Card Styling (No Borders, Soft Shadow) */
+  .sugg-card-box, .p-sugg-grid > a > div {
+    background: #fff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+    overflow: hidden;
+    height: 100% !important;
+  }
+
+  /* 4. Image Adjust */
+  .sugg-img-holder img, .p-sugg-grid img {
+    height: 200px !important; /* Adjusted for better aspect ratio */
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+
+  /* 5. TEXT STYLING INSIDE CARDS */
+  .sugg-info-box, .p-sugg-grid div[style*="padding: 20px"] {
+    padding: 10px 8px !important;
+  }
+
+  /* Product Name */
+  .p-sugg-grid h4, .sugg-info-box h4 {
+    font-size: 13px !important;
+    color: #444 !important;
+    font-weight: 500 !important;
+    margin-bottom: 4px !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Limit to 1 line */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Category Text (Chota aur light) */
+  .p-sugg-grid p, .sugg-info-box p {
     font-size: 11px !important;
+    color: #888 !important;
+    margin-bottom: 6px !important;
   }
 
-  .p-btn-wish-round {
-    min-width: 45px; /* Ye right side mein fix rahega */
-    height: 45px;
-    border-radius: 12px;
+  /* Price Tag */
+  .sugg-price-tag, .p-sugg-grid span {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #222 !important;
+    display: block !important;
   }
-  .p-details-wrapper {
-    padding-bottom: 100px; /* Taaki niche wala nav bar content ko chhupa na de */
+
+  /* Remove Desktop Buttons */
+  .sugg-desktop-btn, .p-sugg-grid button {
+    display: none !important;
+  }
+
+  /* Spacing fix for bottom */
+  .p-suggestions-section {
+    padding-bottom: 80px !important;
   }
 }

@@ -1,0 +1,87 @@
+/* Container Spacing */
+.products-container {
+  padding: 40px 20px;
+  background-color: #EEEEEE; /* */
+  min-height: 100-vh;
+}
+
+/* Category Scroll (Mobile Fix) */
+.category-scroll-wrapper {
+  overflow-x: auto;
+  display: flex;
+  justify-content: center; /* Desktop pe center rahega */
+  margin-bottom: 40px;
+  margin-top: 24px;
+  scrollbar-width: none; /* Firefox hide */
+}
+
+.category-scroll-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome/Safari hide */
+}
+
+.category-tabs {
+  display: flex;
+  gap: 12px;
+  padding: 5px;
+}
+
+/* Category Button Styling */
+.filter-btn {
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: #FFFFFF;
+  color: #462C2F; /* */
+  border: 1px solid #ddd;
+  white-space: nowrap; /* Text break nahi hoga */
+}
+
+.filter-btn.active-tab {
+  background-color: #E16C5B !important; /* */
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 10px rgba(225, 108, 91, 0.3);
+  border-color: #E16C5B;
+}
+
+/* Products Grid with proper spacing */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px !important; /* Boxes ke beech bada spacing */
+  padding: 10px 0;
+}
+
+/* Mobile Responsive Grids */
+@media (max-width: 768px) {
+  .category-scroll-wrapper {
+    justify-content: flex-start; /* Mobile pe start se scroll hoga */
+    padding-left: 10px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(1, 1fr) !important; /* Mobile pe 1 box line mein */
+    gap: 25px !important; /* Mobile spacing */
+  }
+  
+  /* Agar tujhe mobile pe 2 boxes dikhane hain toh niche wala use kar */
+  /* grid-template-columns: repeat(2, 1fr) !important; */
+}
+
+/* Heading Styling */
+.products-title {
+  text-align: center;
+  color: #462C2F;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.title-underline {
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #E16C5B;
+  margin: 8px auto 0;
+  border-radius: 10px;
+}

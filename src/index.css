@@ -337,3 +337,113 @@ body {
     font-size: 1.5rem;
   }
 }
+
+/* --- FOOTER BASE STYLES --- */
+.site-footer {
+  background-color: var(--dark); /* #462C2F */
+  color: var(--white);
+  padding: 50px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-col h3 {
+  color: var(--primary); /* #E16C5B */
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: var(--light); /* #EEEEEE */
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: var(--primary);
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-icons a {
+  color: var(--white);
+  font-size: 1.3rem;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--primary);
+}
+
+/* ===================================================
+   MOBILE RESPONSIVE FIX (768px & Below)
+   =================================================== */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column !important; /* Stack columns vertically */
+    text-align: center !important;
+    gap: 40px !important;
+  }
+
+  .footer-col {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .footer-logo {
+    justify-content: center !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .social-icons {
+    justify-content: center !important;
+  }
+
+  /* Sabse Important: Bottom Nav ke liye space */
+  .site-footer {
+    padding-bottom: 100px !important; /* Taaki bottom menu ke peeche na chhup jaye */
+  }
+
+  .footer-bottom {
+    margin-top: 20px !important;
+    padding-top: 20px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    font-size: 12px !important;
+    text-align: center !important;
+  }
+  
+  .footer-col p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    max-width: 300px !important;
+  }
+}

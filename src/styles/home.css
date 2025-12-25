@@ -1439,140 +1439,281 @@
   margin: 0;
   color: var(--dark);
 }
-
 /* ============================================================
-   HOME PAGE MOBILE RESPONSIVE FIXES
+   ULTIMATE MOBILE RESPONSIVE FIX (Paste at the end of home.css)
    ============================================================ */
 
 @media (max-width: 768px) {
-  /* 1. Base Wrapper Adjustment */
-  .home-main-wrapper {
-    margin-top: 60px; /* Navbar ke liye space */
-    gap: 25px;
-    padding: 0 15px;
+  /* 1. Products Grid (All-time Favourites) - 2 Columns Fix */
+  .products-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* Ek line mein 2 products */
+    gap: 12px !important;
+    padding: 10px !important;
   }
 
-  /* 2. Modern Hero Slider (Bada Challenge) */
-  .hero-modern-slider {
-    height: auto;
-    padding: 40px 0;
+  .product-card {
+    width: 100% !important; /* Single card ki width fix */
+    margin: 0 !important;
   }
 
-  .slider-container {
-    flex-direction: column;
-    text-align: center;
-    padding: 0 20px;
+  .product-img-wrapper img {
+    height: 180px !important; /* Choti screens ke liye perfect height */
+    object-fit: cover !important;
   }
 
-  .hero-title {
-    font-size: 32px; /* Font size mobile ke liye chota */
-    margin: 15px 0;
+  /* 2. Best Sellers & Exclusive Section - Horizontal Swipe Fix */
+  .best-seller-track {
+    display: flex !important;
+    overflow-x: auto !important; /* Ungli se swipe hoga ab */
+    gap: 12px !important;
+    padding: 10px 5px !important;
+    scrollbar-width: none !important; /* Scrollbar hide */
+    -ms-overflow-style: none !important;
+    transform: none !important; /* JavaScript slider ko bypass karega */
   }
 
-  .hero-subtitle {
-    font-size: 16px;
-    margin-bottom: 25px;
+  .best-seller-track::-webkit-scrollbar {
+    display: none !important;
   }
 
-  .slider-right-image img {
-    max-height: 250px; /* Mobile pe image size control */
-    margin-top: 30px;
+  .best-seller-card {
+    min-width: 165px !important; /* Mobile pe 1.5 products dikhenge line mein */
+    max-width: 165px !important;
+    transform: none !important;
   }
 
-  /* 3. Flash Sale Section */
-  .flash-header {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
+  .best-seller-card div[style*="height: 280px"] {
+    height: 180px !important; /* Card image size fix */
   }
 
-  .flash-title-box h2 {
-    font-size: 1.5rem;
-  }
-
-  .timer-unit-box {
-    padding: 8px 10px;
-  }
-
-  .timer-unit-box span {
-    font-size: 1.2rem;
+  /* 3. Flash Sale Fix - 2 Items Per Row */
+  .flash-track {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    transform: none !important;
   }
 
   .flash-slide-group {
-    flex-direction: column; /* Mobile pe ek ke niche ek items */
-    gap: 15px;
+    display: contents !important; /* Slider logic break karke grid banayega */
   }
 
-  .flash-item-card {
-    height: 300px;
-    min-width: 100%;
+  /* 4. Hero Section & Text Size */
+  .hero-title {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+  }
+  
+  .slider-right-image img {
+    height: 220px !important;
+    width: auto !important;
   }
 
-  /* 4. Popular Categories (Circle Icons) */
+  /* 5. Categories Fix - 3 per row */
   .categories-flex {
-    justify-content: center;
-    gap: 15px; /* Mobile pe gap kam */
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  /* Hide Desktop specific Arrows on mobile */
+  .exclusive-best-sellers button, 
+  .best-seller-container button {
+    display: none !important;
+  }
+
+  /* Policy items stack fix */
+  .home-policies-section {
+    flex-direction: column !important;
+    gap: 15px !important;
+    padding: 20px !important;
+  }
+ /* 1. POPULAR CATEGORIES FIX (3 Icons per row) */
+  .categories-flex {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; /* 3 icons ek line mein */
+    gap: 15px !important;
+    padding: 10px !important;
   }
 
   .circle-img-box {
-    width: 70px; /* Icons thode chote */
-    height: 70px;
+    width: 60px !important; /* Icon size chota kiya */
+    height: 60px !important;
+    margin: 0 auto !important;
   }
 
-  .category-name {
-    font-size: 10px;
+  .category-card p {
+    font-size: 11px !important;
+    font-weight: 500 !important;
   }
 
-  /* 5. Policies Section */
-  .home-policies-section {
-    flex-direction: column;
-    gap: 25px;
-    padding: 30px 15px;
+  /* 2. FLASH SALE: 4 LARGE ITEMS (2x2 GRID) */
+  .flash-track {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* Ek line mein 2 items */
+    gap: 10px !important;
+    transform: none !important; /* No sliding on mobile */
+    padding: 10px 0 !important;
   }
 
-  .policy-item {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 15px;
+  /* Slider ki repeatition hatane ke liye slides ko contents karo */
+  .flash-slide-group {
+    display: contents !important;
   }
 
-  .policy-item:last-child {
-    border-bottom: none;
+  /* Sirf pehle 4 items ko bada dikhao, baaki sab hide */
+  .flash-track > .flash-slide-group:nth-of-type(n+2),
+  .flash-slide-group > div:nth-child(n+5) {
+    display: none !important;
   }
 
-  /* 6. Subscribe Bar */
-  .sub-input-group {
-    flex-direction: column;
-    border-radius: 15px;
-    border: none;
+  /* Product Card Look Improvement */
+  .flash-slide-group > div {
+    width: 100% !important;
+    aspect-ratio: 1/1.2 !important; /* Shape bdia dikhegi */
+    border-radius: 8px !important;
+    border: 1px solid #333 !important; /* Dark theme border */
+    position: relative !important;
+    overflow: hidden !important;
   }
 
-  .sub-input-group input {
-    width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    padding: 15px;
+  .flash-slide-group img {
+    height: 100% !important;
+    object-fit: cover !important;
   }
 
-  .sub-button-theme {
-    width: 100%;
-    padding: 15px;
-    border-radius: 10px;
+  /* Overlay adjustment taaki image saaf dikhe */
+  .flash-slide-group div[style*="background: linear-gradient"] {
+    padding: 5px !important;
+    background: rgba(0,0,0,0.5) !important; /* Halki transparency */
   }
 
-  /* 7. Flash Sale Grid (If using Grid instead of Slider) */
-  .flash-sale-grid {
-    grid-template-columns: 1fr; /* Single column on small screens */
+  /* Dots aur Arrows ko bilkul hatado */
+  .flash-nav-dots, .flash-timer-wrapper + p {
+    display: none !important;
+  }  
+  /* 1. Container ko Flex row mein badlo taaki scroll ho sake */
+  .categories-flex {
+    display: flex !important;
+    flex-wrap: nowrap !important; /* Items ko niche girne se rokega */
+    overflow-x: auto !important; /* Side scroll enable */
+    gap: 20px !important; /* Icons ke beech ka gap */
+    padding: 15px 10px !important;
+    scrollbar-width: none !important; /* Firefox ke liye scrollbar hide */
+    -ms-overflow-style: none !important;
   }
-}
 
-/* Extra small screens fix (iPhone SE etc.) */
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 28px;
+  /* Chrome/Safari ke liye scrollbar hide */
+  .categories-flex::-webkit-scrollbar {
+    display: none !important;
   }
-  
-  .compact-header h2 {
-    font-size: 1.4rem;
+
+  /* 2. Har Category Card ki setting */
+  .category-card-link {
+    flex: 0 0 auto !important; /* Width ko fix rakhega scroll ke liye */
+    width: 75px !important; /* Exact width taaki line mein 4-5 dikhein */
+    text-align: center !important;
+  }
+
+  /* 3. Icon Circle (Flipkart Style) */
+  .circle-img-box {
+    width: 60px !important;
+    height: 60px !important;
+    background: #f0f0f0 !important; /* Light background jaisa image mein hai */
+    border-radius: 12px !important; /* Thoda rounded square look */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto 8px !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
+  }
+
+  /* 4. Text Styling */
+  .category-card p {
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    color: #333 !important;
+    margin: 0 !important;
+    white-space: nowrap !important; /* Text ek hi line mein rahega */
+  }
+
+  /* View All button fix */
+  .section-header .view-all-link {
+    font-size: 12px !important;
+    color: #2874f0 !important; /* Professional Blue color */
+  }
+
+  /* 1. Header aur Timer ko center mein set karo */
+  .flash-header {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 10px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .flash-title-box h2 {
+    font-size: 1.2rem !important;
+    margin: 0 !important;
+  }
+
+  /* 2. Grid Setup: 2 lines, 2 items each */
+  .flash-track {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* Ek line mein 2 items */
+    gap: 12px !important;
+    transform: none !important; /* Slider stop kiya mobile pe */
+    width: 100% !important;
+    padding: 0 5px !important;
+  }
+
+  /* Slider loops ko contents karo taaki grid sahi se kaam kare */
+  .flash-slide-group {
+    display: contents !important;
+  }
+
+  /* 3. SIRF PEHLE 4 ITEMS DIKHAO */
+  /* Baaki repeat hone wale ya extra items ko hide kar dega */
+  .flash-track > .flash-slide-group:nth-of-type(n+2),
+  .flash-slide-group > div:nth-child(n+5) {
+    display: none !important;
+  }
+
+  /* 4. Product Card Styling (Flipkart/Myntra style) */
+  .flash-slide-group > div {
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important; /* Perfect Square images jaisa image me hai */
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    background: #222 !important; /* Dark background for flash sale */
+    border: 1px solid #444 !important;
+  }
+
+  .flash-slide-group img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Pic kategi nahi, poori fit hogi */
+  }
+
+  /* 5. Shop Now Overlay Fix */
+  .flash-slide-group div[style*="position: absolute"] {
+    background: linear-gradient(transparent, rgba(0,0,0,0.8)) !important;
+    padding: 8px 5px !important;
+  }
+
+  .flash-slide-group span {
+    font-size: 10px !important;
+    font-weight: bold !important;
+  }
+
+  .flash-slide-group button {
+    font-size: 10px !important;
+    margin-top: 2px !important;
+  }
+
+  /* 6. Dots aur extra arrows hide karo */
+  .flash-nav-dots {
+    display: none !important;
   }
 }

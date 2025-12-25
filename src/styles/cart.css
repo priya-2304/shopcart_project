@@ -199,57 +199,148 @@
 }
 
 /* Responsive */
+/* ===================================================
+   MOBILE RESPONSIVE: CLEAN COLORS & NO FIXED BAR
+   =================================================== */
 @media (max-width: 768px) {
-  .cart-item {
-    flex-direction: column;
-    align-items: flex-start;
+  /* 1. Cart Page Base */
+  .cart-page {
+    padding-bottom: 20px !important; /* Fixed footer ki space hata di */
+    background: var(--dark) !important; /* Tera brown base #462C2F */
   }
-
-  .cart-footer {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-  }
-
-  .checkout-btn, .remove-btn {
-    width: 100%;
-  }
-
-  .cart-qty {
-    justify-content: flex-start;
-  }
-
-  .payment-buttons {
-    flex-direction: column;
-  }
-}
-
-
-@media (max-width: 600px) {
-  .cart-item {
-    padding: 10px;
+  .cart-page h2 {
+    display: block !important;
+    text-align: center !important;
+    color: var(--white) !important; /* Safed color takki chamke */
+    background: transparent !important; /* Isse brown ke upar dikhega */
+    margin: 10px 0 25px 0 !important;
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
     position: relative;
+    z-index: 5;
+  }
+  /* 2. Cart Item: High Contrast */
+  .cart-item {
+    display: flex !important;
+    flex-direction: row !important; 
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 12px !important;
+    background: #1a1a1a !important; /* Deep black for card */
+    border-radius: 10px !important;
+    margin-bottom: 12px !important;
+    margin-top: 15px !important;
+    border: 1px solid #333 !important;
   }
 
   .cart-item-img {
-    width: 80px;
-    height: 80px;
+    width: 70px !important;
+    height: 70px !important;
+    object-fit: cover !important;
+    border-radius: 6px !important;
   }
 
+  /* 3. Text Colors: Visibility Fix */
   .cart-item-details h3 {
-    font-size: 0.9rem;
+    font-size: 15px !important;
+    color: var(--white) !important; /* Brown pe white best dikhega */
+    margin-bottom: 4px !important;
   }
 
-  .cart-footer {
-    position: fixed; /* Checkout button niche chipka do */
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    border-radius: 0;
+  .cart-item-details .price {
+    color: var(--primary) !important; /* Coral shade #E16C5B */
+    font-weight: bold !important;
   }
-  
-  .cart-page {
-    padding-bottom: 100px; /* Footer ke liye jagah */
+
+  /* 4. Quantity Controls */
+  .cart-qty {
+    display: flex !important;
+    align-items: center !important;
+    background: #2a2a2a !important;
+    border-radius: 5px !important;
+    padding: 2px 5px !important;
+  }
+
+  .qty-btn {
+    background: #eeeeee !important; /* Off-white for contrast */
+    color: #000 !important;
+    font-weight: bold !important;
+    border-radius: 4px !important;
+    width: 25px !important;
+    height: 25px !important;
+  }
+
+  .qty-num {
+    color: var(--white) !important;
+    font-weight: bold !important;
+  }
+
+  /* 5. Remove Button: Dark Red */
+  .remove-btn {
+    background: #8b0000 !important; /* Deep Red */
+    color: white !important;
+    padding: 8px !important;
+    font-size: 12px !important;
+    border-radius: 6px !important;
+    margin-top: 5px !important;
+  }
+
+  /* 6. CART FOOTER: SCROLLABLE (NOT FIXED) */
+  .cart-footer {
+    position: static !important; /* Yahan se FIXED hata diya */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    text-align: center !important;
+    padding: 20px !important;
+    background: transparent !important;
+    border-top: 1px solid var(--secondary) !important;
+    margin-top: 20px !important;
+  }
+
+  .cart-footer .total {
+    color: var(--white) !important; /* Total hamesha white dikhega */
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+    margin-bottom: 15px !important;
+  }
+
+  /* Big Checkout Button */
+  .checkout-btn {
+    background: var(--primary) !important; /* Coral shade #E16C5B */
+    color: var(--white) !important;
+    padding: 14px !important;
+    border-radius: 8px !important;
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+    width: 100% !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
+  }
+  .cart-items {
+    margin-top: 10px !important;
+    padding: 0 10px !important;
   }
 }
+/* ===================================================
+   WISHLIST MOBILE GRID (2 COLUMNS)
+   =================================================== */
+@media (max-width: 768px) {
+  .products-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 items ek line mein */
+    gap: 12px !important;
+    padding: 10px !important;
+  }
+
+  .wishlist-title {
+ text-align: center !important;
+  width: 100% !important;
+  color: var(--primary) !important; /* Maroon/Brown pe Coral/Red chamkega */
+  font-size: 2rem !important;
+  margin: 20px 0 !important;
+  font-weight: bold !important;
+  }
+}
+
