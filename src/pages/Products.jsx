@@ -4,7 +4,7 @@ import { useStore } from "../context/StoreContext";
 import BackToTop from "../pages/BackToTop";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import "../styles/products.css"; // Is file mein neeche wali CSS daal dena
+import "../styles/products.css"; 
 
 export default function Products() {
   const { search } = useStore();
