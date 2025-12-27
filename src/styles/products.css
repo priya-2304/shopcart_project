@@ -5,18 +5,17 @@
   min-height: 100-vh;
 }
 
-/* Category Scroll (Mobile Fix) */
 .category-scroll-wrapper {
   overflow-x: auto;
   display: flex;
-  justify-content: center; /* Desktop pe center rahega */
+  justify-content: center; 
   margin-bottom: 40px;
   margin-top: 24px;
-  scrollbar-width: none; /* Firefox hide */
+  scrollbar-width: none; 
 }
 
 .category-scroll-wrapper::-webkit-scrollbar {
-  display: none; /* Chrome/Safari hide */
+  display: none; 
 }
 
 .category-tabs {
@@ -35,38 +34,34 @@
   background-color: #FFFFFF;
   color: #462C2F; /* */
   border: 1px solid #ddd;
-  white-space: nowrap; /* Text break nahi hoga */
+  white-space: nowrap; 
 }
 
 .filter-btn.active-tab {
-  background-color: #E16C5B !important; /* */
+  background-color: #E16C5B !important;
   color: #FFFFFF !important;
   box-shadow: 0 4px 10px rgba(225, 108, 91, 0.3);
   border-color: #E16C5B;
 }
 
-/* Products Grid with proper spacing */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px !important; /* Boxes ke beech bada spacing */
+  gap: 30px !important; 
   padding: 10px 0;
 }
 
-/* Mobile Responsive Grids */
 @media (max-width: 768px) {
   .category-scroll-wrapper {
-    justify-content: flex-start; /* Mobile pe start se scroll hoga */
+    justify-content: flex-start; 
     padding-left: 10px;
   }
 
   .products-grid {
-    grid-template-columns: repeat(1, 1fr) !important; /* Mobile pe 1 box line mein */
+    grid-template-columns: repeat(1, 1fr) !important;  
     gap: 25px !important; /* Mobile spacing */
   }
   
-  /* Agar tujhe mobile pe 2 boxes dikhane hain toh niche wala use kar */
-  /* grid-template-columns: repeat(2, 1fr) !important; */
 }
 
 /* Heading Styling */
