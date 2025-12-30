@@ -4,7 +4,6 @@ import ProductCard from "../components/ProductCard";
 import { products } from "../data/products";
 import { useStore } from "../context/StoreContext";
 import BackToTop from "../pages/BackToTop";
-
 import "../styles/Products.css";
 import { FaChevronDown, FaChevronUp, FaSlidersH } from "react-icons/fa"; // Added Icons
 
