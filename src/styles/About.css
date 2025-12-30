@@ -12,7 +12,6 @@
   color: var(--dark);
   font-family: 'Poppins', sans-serif;
 }
-
 /* Hero Section */
 .about-hero {
   height: 150px; /* Gap aur bhi kam kar diya */
@@ -183,5 +182,57 @@
 
   .form-wrapper {
     padding: 20px;
+  }
+}
+/* --- Mobile Responsive Code --- */
+@media (max-width: 768px) {
+  /* Container padding adjust */
+  .about-content {
+    padding: 0 15px 40px !important;
+  }
+
+  /* Grid ko ek column me convert karna */
+  .content-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+  }
+
+  /* Heading size chota karna mobile k lie */
+  .main-title {
+    font-size: 32px !important; /* Mobile k lie perfect size */
+    white-space: normal !important; /* Mobile pe line break allow karni padegi */
+    flex-wrap: wrap !important;
+    letter-spacing: -0.5px !important;
+  }
+
+  .main-title span {
+    margin-left: 0 !important;
+    display: block !important; /* "Quality & Style" niche wali line me aa jae */
+  }
+
+  /* Stats grid ko mobile pe dhang se dikhana */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .stat-box {
+    padding: 15px 10px !important;
+  }
+
+  .stat-box h3 {
+    font-size: 20px !important;
+  }
+
+  /* Image full width */
+  .large-image-wrapper {
+    margin-top: 10px;
+  }
+
+  /* Explore button mobile k lie full width */
+  .explore-btn {
+    width: 100%;
+    padding: 12px 20px !important;
   }
 }

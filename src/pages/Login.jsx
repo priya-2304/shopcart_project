@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { FiMail, FiLock, FiShoppingCart, FiArrowRight } from 'react-icons/fi';
@@ -18,8 +19,14 @@ export default function Login({ setIsAuthenticated }) {
 
   return (
     <div className="login-page">
+      {/* --- MOBILE LOGO (Only shows on mobile) --- */}
+      <div className="mobile-header-logo">
+        <FiShoppingCart className="mobile-logo-icon" />
+        <span className="mobile-logo-name">SHOPCART</span>
+      </div>
+
       <div className="login-card">
-        {/* LEFT SIDE - BRANDING */}
+        {/* LEFT SIDE - BRANDING (Hidden on mobile) */}
         <div className="login-branding">
           <div className="branding-overlay"></div>
           <img 
@@ -42,7 +49,7 @@ export default function Login({ setIsAuthenticated }) {
         <div className="login-form-container">
           <div className="form-header">
             <h3>Welcome Back</h3>
-            <p>Sign in to continue shopping</p>
+            <p>Please enter your details to sign in</p>
           </div>
 
           <form onSubmit={handleLogin} className="login-form">
@@ -52,7 +59,7 @@ export default function Login({ setIsAuthenticated }) {
                 <FiMail className="input-icon" />
                 <input 
                   type="email" 
-                  placeholder="name@example.com" 
+                  placeholder="Enter email" 
                   onChange={(e) => setEmail(e.target.value)} 
                   required 
                 />
@@ -65,7 +72,7 @@ export default function Login({ setIsAuthenticated }) {
                 <FiLock className="input-icon" />
                 <input 
                   type="password" 
-                  placeholder="••••••••" 
+                  placeholder="Enter password" 
                   onChange={(e) => setPassword(e.target.value)} 
                   required 
                 />
@@ -85,10 +92,18 @@ export default function Login({ setIsAuthenticated }) {
               SIGN IN <FiArrowRight className="btn-arrow" />
             </button>
           </form>
+          <div className="divider">
+  <span>OR</span>
+</div>
+
+<button type="button" className="google-btn">
+  <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="google" />
+  Continue with Google
+</button>
 
           <div className="form-footer">
-            <p>New to Shopcart? 
-              <Link to="/signup" className="create-acc"> Create Account</Link>
+            <p>Don't have an account? 
+              <Link to="/signup" className="create-acc"> Sign Up</Link>
             </p>
           </div>
         </div>

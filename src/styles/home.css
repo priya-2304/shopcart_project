@@ -1716,4 +1716,123 @@
   .flash-nav-dots {
     display: none !important;
   }
+}/* --- Desktop View Safety (No Changes) --- */
+@media (min-width: 769px) {
+  .flash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+  }
+}
+
+/* --- MOBILE VIEW: DITTO CRAZY DEALS LOOK --- */
+@media (max-width: 768px) {
+  
+  /* 1. Header Centering & Spacing */
+  .flash-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 30px 15px !important;
+  }
+
+  .flash-title-box h2 {
+    font-size: 26px !important;
+    margin-bottom: 1px !important;
+    font-weight: 800 !important; /* Bold look like Crazy Deals */
+  }
+
+  /* 2. Orange Line Center */
+  .orange-separator {
+    display: block !important;
+    width: 45px !important;
+    height: 2px !important;
+    background-color: #E16C5B !important;
+    margin: 6px auto 8px !important;
+  }
+
+  /* 3. White Timer Boxes (Ditto Screenshot) */
+  .flash-timer-wrapper {
+    display: flex !important;
+    gap: 7px !important;
+   margin-top: 8px !important;    /* Header aur Timer ke beech kam gap */
+    margin-bottom: 2px !important;
+    justify-content: center !important;
+  }
+
+  .timer-unit-box {
+    background: white !important;
+    width: 52px !important;
+    height: 58px !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08) !important;
+    border: 1px solid #eee !important;
+  }
+
+  .timer-unit-box span {
+    color: #E16C5B !important; /* Tera Theme Color */
+    font-size: 18px !important;
+    font-weight: 800 !important;
+  }
+
+  .timer-unit-box small {
+    color: #888 !important;
+    font-size: 8px !important;
+    font-weight: 700 !important;
+  }
+
+  /* 4. Horizontal Slider (Big Rounded Images) */
+  .flash-track {
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 15px !important;
+    padding: 0 20px 20px !important;
+    transform: none !important; /* Mobile pe automatic scroll chalega */
+    scrollbar-width: none;
+  }
+  .flash-track::-webkit-scrollbar { display: none; }
+
+  .flash-slide-group {
+    display: flex !important; /* Grid hata kar flex kiya for scrolling */
+    grid-template-columns: none !important;
+    gap: 15px !important;
+    min-width: 100% !important;
+  }
+
+  /* Image Card Styling */
+  .flash-slide-group > div {
+    min-width: 160px !important; /* Big images like screenshot */
+    height: 230px !important;
+    border-radius: 18px !important; /* Rounded corners */
+    scroll-snap-align: center !important;
+    flex-shrink: 0 !important;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1) !important;
+  }
+
+  /* Text inside Card */
+  .flash-slide-group span {
+    color: #E16C5B !important; /* Label color */
+    font-size: 9px !important;
+  }
+
+  .flash-slide-group button {
+    color: white !important;
+    background: rgba(225, 108, 91, 0.9) !important; /* Shop now button fill */
+    padding: 5px 10px !important;
+    border-radius: 4px !important;
+    font-size: 10px !important;
+    margin-top: 5px !important;
+  }
+
+  /* 5. Dots adjustment */
+  .flash-nav-dots {
+    margin-top: 10px !important;
+    display: none !important;
+  }
 }

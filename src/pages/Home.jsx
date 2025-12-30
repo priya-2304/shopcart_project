@@ -59,7 +59,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setInterval(() => {
       setFlashIndex((prev) => (prev + 1) % 3); 
-    }, 5000);
+    }, 3000);
     return () => clearInterval(timer);
   }, []);
 
@@ -73,20 +73,20 @@ export default function Home() {
   const { h, m, s } = formatTime(timeLeft);
 
   const flashProducts = [
-    { id: 101, label: "PREMIUM BRANDS", name: "Fashion Dress", image: "dress1.png" },
-    { id: 102, label: "LUXURY PICKS", name: "Luxury Watch", image: "watch.png" },
-    { id: 103, label: "DAILY COMFORT", name: "Beauty Combo", image: "beauty.png" },
-    { id: 104, label: "STREETWEAR", name: "Smart Phone", image: "iphone.png" },
+    { id: 101, label: "DAILY COMFORT", name: "Fashion Dress", image: "image.png" },
+    { id: 102, label: "SMART WATCH", name: "Luxury Watch", image: "watch.png" },
+    { id: 103, label: "PREMIUM BRANDS", name: "Beauty Combo", image: "shoes.png" },
+    { id: 104, label: "LUXURY PICKS", name: "Smart Phone", image: "iphone.png" },
     { id: 105, label: "HOME TECH", name: "Luxury Fridge", image: "fridge.png" },
     { id: 106, label: "WEDDING", name: "Lehanga", image: "Lehanga.png" },
   ];
 
   const featuredProducts = [
-    { id: 1, name: "Stylish Summer Dress", price: 1799, image: "stylish Summer Dress.png" },
-    { id: 2, name: "Crop Tops", price: 699, image: "croptop.png" },
-    { id: 3, name: "Dresses", price: 899, image: "dress1.png" },
+     { id: 2, name: "Crop Tops", price: 699, image: "croptop.png" },
+      { id: 3, name: "Men's Fashion", price: 899, image: "image.png" },
     { id: 4, name: "Lehangas", price: 2999, image: "Lehanga.png" },
-    { id: 5, name: "Kurti", price: 2599, image: "Kurtis.png" },
+    { id: 5, name: "Footwear", price: 2599, image: "shoes.png" },
+    { id: 1, name: "Formal Shirt", price: 1799, image: "shirt1.png" },
     { id: 6, name: "Sandals", price: 599, image: "Sandals.png" },
   ];
 
@@ -127,9 +127,22 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="popular-categories-container compact-categories">
-        <div className="section-header">
-          <h2>Explore Popular Categories</h2>
+      <div className="popular-categories-container compact-categories" style={{ textAlign: 'center', padding: '60px 20px 20px' }}>
+        <div className="section-header-premium">
+          <h2 style={{ 
+      fontSize: '25px', 
+      fontWeight: '300', 
+      letterSpacing: '1px', 
+      color: '#E16C5B', 
+      textTransform: 'uppercase', 
+      marginBottom: '5px' 
+    }}>Explore Popular Categories</h2>
+
+      <p style={{ color: '#999', fontSize: '14px', maxWidth: '500px', margin: '0 auto', fontWeight: '400' }}>
+      Handpicked collections just for you.
+    </p>
+    {/* Wo orange line jo screenshot mein hai */}
+    <div style={{ width: '40px', height: '1.5px', background: '#E16C5B', margin: '15px auto 35px' }}></div>
           <Link to="/products" className="view-all-link">View All &gt;</Link>
         </div>
         <div className="categories-flex">
@@ -143,20 +156,32 @@ export default function Home() {
           ))}
         </div>
       </div>
+       {/* --- FLASH SALE SECTION --- */}
+<section className="theme-flash-sale-section compact-flash">
+  <div className="flash-header">
+    <div className="flash-title-box">
+      <h2 style={{ 
+        fontSize: '30px', 
+        fontWeight: '700', 
+        letterSpacing: '1px', 
+        color: '#E16C5B', 
+        textTransform: 'uppercase', 
+        marginBottom: '5px' 
+      }}>
+        🔥 Exclusive Flash Sale
+      </h2>
+      <p style={{ color: '#999', fontSize: '14px', fontWeight: '200' }}>
+        Grab your favorites before the time runs out!
+      </p><div className="orange-separator"></div>
+     </div>
 
-      {/* --- FLASH SALE SECTION --- */}
-      <section className="theme-flash-sale-section compact-flash">
-        <div className="flash-header">
-          <div className="flash-title-box">
-            <h2>🔥 EXCLUSIVE FLASH SALE</h2>
-            <p>Grab your favorites before the time runs out!</p>
-          </div>
-          <div className="flash-timer-wrapper">
-            <div className="timer-unit-box"><span>{h.toString().padStart(2, '0')}</span><small>HRS</small></div>
-            <div className="timer-unit-box"><span>{m.toString().padStart(2, '0')}</span><small>MIN</small></div>
-            <div className="timer-unit-box"><span>{s.toString().padStart(2, '0')}</span><small>SEC</small></div>
-          </div>
-        </div>
+    {/* Timer Unit */}
+    <div className="flash-timer-wrapper">
+      <div className="timer-unit-box"><span>{h.toString().padStart(2, '0')}</span><small>HRS</small></div>
+      <div className="timer-unit-box"><span>{m.toString().padStart(2, '0')}</span><small>MIN</small></div>
+      <div className="timer-unit-box"><span>{s.toString().padStart(2, '0')}</span><small>SEC</small></div>
+    </div>
+  </div>
 
         <div className="flash-slider-container" style={{ overflow: 'hidden' }}>
           <div className="flash-track" style={{ 
@@ -218,10 +243,16 @@ export default function Home() {
         backgroundColor: "#FFFFFF",
         position: "relative" 
       }}>
-        <div className="section-header" style={{ marginBottom: "30px", paddingLeft: "5%" }}>
-          <h2 style={{ fontSize: "24px", fontWeight: "700", color: "#462C2F" }}>
-            Best Sellers in Clothing & Accessories
+        <div className="section-header-premium" style={{ marginBottom: "40px",textAlign:'center', paddingLeft: "5%" }}>
+          <h2 style={{ fontSize: "30px", fontWeight: "700", color: '#E16C5B',letterSpacing: '1px',textTransform: 'uppercase', 
+      marginBottom: '5px' }}>
+            Best Sellers 
           </h2>
+          <p style={{ color: '#999', fontSize: '14px', maxWidth: '600px', margin: '0 auto', fontWeight: '400' }}>
+      Top-rated clothing & accessories picked by our customers.
+    </p>
+    {/* Wo signature orange line */}
+    <div style={{ width: '40px', height: '1.5px', background: '#E16C5B', margin: '10px auto 0' }}></div>
         </div>
 
         <div className="best-seller-container" style={{ 
@@ -247,7 +278,6 @@ export default function Home() {
             scrollBehavior: "smooth",
             padding: "10px 0"
           }}>
-            {/* Yahan hum featuredProducts use kar rahe hain, tu apni data list bhi de sakta hai */}
             {featuredProducts.concat(featuredProducts).map((product, idx) => (
               <div key={idx} className="best-seller-card" style={{ 
                 minWidth: "220px", 

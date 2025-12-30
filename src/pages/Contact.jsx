@@ -63,9 +63,22 @@ const ContactUs = () => {
           
           <div className="contact-left">
             <div className="tagline"><span className="line"></span> GET IN TOUCH</div>
-            <h2 className="main-title">
-              Let's Start a <span className="highlight-text">Conversation</span> with ShopCart.
-            </h2>
+            <h2 className="main-title" style={{ 
+  fontSize: 'clamp(25px, 4.5vw, 28px)', 
+  lineHeight: '1.1', 
+  color: '#3d1f1a', 
+  fontWeight: '850', 
+  letterSpacing: '-1.5px', 
+  margin: '0 0 20px 0',
+  whiteSpace: 'nowrap', // Isse text kabhi break nahi hoga
+  display: 'flex',
+  alignItems: 'baseline',
+  flexWrap: 'nowrap' // Desktop par single line ensure karta hai
+}}>
+  Let's Start a 
+  <span style={{ color: '#E16C5B', margin: '0 10px' }}>Conversation</span> 
+  with ShopCart.
+</h2>
             <p className="description">
               Have questions about our collections or need help with your order? 
               Our team is here to provide you with the best shopping experience.
@@ -145,3 +158,4 @@ const ContactUs = () => {
 };
 
 export default ContactUs;
+

@@ -1,160 +1,133 @@
-// import React from 'react';
-
-// export default function ReturnPolicy() {
-//   const scrollToSection = (id) => {
-//     const element = document.getElementById(id);
-//     if (element) {
-//       element.scrollIntoView({ behavior: "smooth", block: "start" });
-//     }
-//   };
-
-//   const themePrimary = "#E16C5B";
-//   const themeDark = "#3d1f1a"; 
-
-//   return (
-//     <div className="max-w-[1200px] mx-auto px-5 py-10 lg:pt-5">
-//       {/* Header Section */}
-//       <header className="text-center mb-16">
-//         <h1 className="text-3xl font-extrabold mb-4" style={{ color: themeDark }}>
-//           Return & Refund Policy
-//         </h1>
-//         <p className="text-sm font-semibold uppercase tracking-widest" style={{ color: themePrimary }}>
-//           Easy 7-Day Returns for a Worry-Free Shopping Experience
-//         </p>
-//       </header>
-
-//       <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 relative">
-//         {/* Main Content Area */}
-//         <main className="flex-[2]">
-//           <section className="mb-12">
-//             <p className="text-lg leading-relaxed mb-6" style={{ color: "#5a4a47" }}>
-//               At our store, we want you to be 100% satisfied with your purchase. If for any reason you're not happy, our return process is designed to be as simple and transparent as possible.
-//             </p>
-//           </section>
-
-//           {/* Section 1 */}
-//           <div className="mb-12 scroll-mt-24" id="eligibility">
-//             <h2 className="text-2xl font-bold mb-4 inline-block border-b-4 pb-1" 
-//                 style={{ color: themeDark, borderBottomColor: themePrimary }}>
-//               1. Eligibility for Returns
-//             </h2>
-//             <p className="mb-4" style={{ color: "#5a4a47" }}>Most items can be returned within <strong>7 days</strong> of delivery, provided they meet these conditions:</p>
-//             <ul className="list-disc ml-6 space-y-3" style={{ color: "#5a4a47" }}>
-//               <li>The product must be unused, unwashed, and in its original condition.</li>
-//               <li>All original tags, packaging, and accessories must be intact.</li>
-//               <li>Innerwear, face masks, and gift cards are <strong>non-returnable</strong> due to hygiene and safety reasons.</li>
-//             </ul>
-//           </div>
-
-//           {/* Section 2 */}
-//           <div className="mb-12 scroll-mt-24" id="process">
-//             <h2 className="text-2xl font-bold mb-4 inline-block border-b-4 pb-1" 
-//                 style={{ color: themeDark, borderBottomColor: themePrimary }}>
-//               2. Return Process
-//             </h2>
-//             <div className="space-y-4">
-//               <div className="p-5 rounded-lg border bg-white shadow-sm flex gap-4">
-//                 <span className="text-2xl font-bold" style={{ color: themePrimary }}></span>
-//                 <p style={{ color: "#5a4a47" }}>1. Log in to your account and go to 'My Orders' to request a return or contact our support team.</p>
-//               </div>
-//               <div className="p-5 rounded-lg border bg-white shadow-sm flex gap-4">
-//                 <span className="text-2xl font-bold" style={{ color: themePrimary }}></span>
-//                 <p style={{ color: "#5a4a47" }}>2.Once approved, we will arrange a free reverse pickup from your delivery address.</p>
-//               </div>
-//               <div className="p-5 rounded-lg border bg-white shadow-sm flex gap-4">
-//                 <span className="text-2xl font-bold" style={{ color: themePrimary }}></span>
-//                 <p style={{ color: "#5a4a47" }}>3. Place the item in its original packaging and hand it over to our courier partner.</p>
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* Section 3 */}
-//           <div className="mb-12 scroll-mt-24" id="refunds">
-//             <h2 className="text-2xl font-bold mb-4 inline-block border-b-4 pb-1" 
-//                 style={{ color: themeDark, borderBottomColor: themePrimary }}>
-//               3. Refund Timelines
-//             </h2>
-//             <p className="leading-relaxed mb-4" style={{ color: "#5a4a47" }}>
-//               After we receive your returned item, it goes through a quality check. Once approved, the refund is initiated:
-//             </p>
-//             <ul className="list-disc ml-6 space-y-3" style={{ color: "#5a4a47" }}>
-//               <li><strong>Prepaid Orders:</strong> Refund will be credited back to your original payment method within 5-7 business days.</li>
-//               <li><strong>COD Orders:</strong> Refund will be sent via bank transfer or store credit as per your preference.</li>
-//             </ul>
-//           </div>
-
-//           {/* Section 4 */}
-//           <div className="mb-12 scroll-mt-24" id="exchanges">
-//             <h2 className="text-2xl font-bold mb-4 inline-block border-b-4 pb-1" 
-//                 style={{ color: themeDark, borderBottomColor: themePrimary }}>
-//               4. Exchange Policy
-//             </h2>
-//             <p className="leading-relaxed" style={{ color: "#5a4a47" }}>
-//               Want a different size or color? We offer one-time free exchanges for size issues. Just select the 'Exchange' option during the return request. The replacement will be dispatched after the original item is picked up.
-//             </p>
-//           </div>
-//         </main>
-
-//         {/* Sidebar Navigation */}
-//         <aside className="hidden lg:block flex-1">
-//           <div className="sticky top-24 border-l-2 border-gray-100 pl-8">
-//             <h3 className="text-sm font-bold uppercase tracking-widest mb-6" style={{ color: themeDark }}>
-//               Returns Guide
-//             </h3>
-//             <ul className="space-y-4">
-//               {[
-//                 { name: 'Eligibility', id: 'eligibility' },
-//                 { name: 'Step-by-Step Process', id: 'process' },
-//                 { name: 'Refund Details', id: 'refunds' },
-//                 { name: 'Exchanges', id: 'exchanges' }
-//               ].map((item, index) => (
-//                 <li key={item.id} 
-//                     onClick={() => scrollToSection(item.id)}
-//                     className="cursor-pointer text-sm transition-all duration-300 hover:translate-x-1"
-//                     style={{ color: "#7a6a67" }}>
-//                   <span className="mr-2 font-bold" style={{ color: themePrimary }}>0{index + 1}.</span> {item.name}
-//                 </li>
-//               ))}
-//             </ul>
-//             <button 
-//               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-//               className="mt-10 text-xs font-bold transition-colors hover:underline"
-//               style={{ color: themePrimary }}>
-//               BACK TO TOP ↑
-//             </button>
-//           </div>
-//         </aside>
-//       </div>
-//     </div>
-//   );
-// }
-
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { FaUndo, FaCheckCircle, FaExclamationTriangle, FaMoneyBillWave } from 'react-icons/fa';
 
 export default function ReturnPolicy() {
-  const themePrimary = "#E16C5B";
-  const themeDark = "#3d1f1a"; 
+  const themePrimary = "#E16C5B"; //
+  const themeDark = "#3d1f1a";    //
+  const navigate = useNavigate();
 
   return (
-    <div className="max-w-[1200px] mx-auto px-4 py-10">
-      <header className="text-center" style={{ marginBottom: '80px' }}>
-        <h1 className="text-3xl md:text-5xl font-extrabold" style={{ color: themeDark }}>Return & Refund</h1>
+    <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0px 20px 60px 20px', fontFamily: 'poppins, sans-serif' }}>
+      
+      {/* Header Section - Zero Gap Fix */}
+      <header style={{ textAlign: 'center', marginBottom: '30px', paddingTop: '10px' }}>
+        <h1 style={{ 
+          fontSize: 'clamp(32px, 5vw, 52px)', 
+          fontWeight: '900', 
+          color: themeDark, 
+          margin: '0', 
+          lineHeight: '1.1' 
+        }}>
+          Return & Refund
+        </h1>
+        
+        <div style={{ marginTop: '8px' }}>
+          <span style={{ 
+            color: themePrimary, 
+            fontWeight: '700', 
+            fontSize: '13px', 
+            textTransform: 'uppercase', 
+            letterSpacing: '1.5px',
+            backgroundColor: '#fff5f4',
+            padding: '4px 12px',
+            borderRadius: '50px'
+          }}>
+            Easy Returns
+          </span>
+        </div>
+
+        <p style={{ color: '#888', fontSize: '12px', fontWeight: '500', marginTop: '12px' }}>
+          Last Updated: <span style={{ color: themePrimary }}>December 30, 2025</span>
+        </p>
       </header>
 
-      <div style={{ marginBottom: '70px' }}>
-        <h2 className="text-2xl md:text-3xl font-bold border-b-4 pb-2" 
-            style={{ color: themeDark, borderBottomColor: themePrimary, marginBottom: '40px', display: 'inline-block' }}>
-          1. Return Eligibility
-        </h2>
-        <div style={{ marginTop: '20px' }}>
-          <p className="text-base md:text-lg leading-[2]" style={{ color: "#5a4a47", marginBottom: '30px' }}>
-            Items must be returned within 7 days. They must be unused, unwashed, and in the original packaging with all tags attached.
+      {/* Intro Box */}
+      <div style={{ 
+        backgroundColor: '#fdfdfd', 
+        borderLeft: `5px solid ${themePrimary}`, 
+        padding: '25px', 
+        marginBottom: '40px', 
+        borderRadius: '8px', 
+        boxShadow: '0 4px 20px rgba(0,0,0,0.05)' 
+      }}>
+        <p style={{ fontSize: '17px', lineHeight: '1.7', color: '#5a4a47', margin: 0 }}>
+          At <strong>ShopCart</strong>, we want you to be 100% satisfied. If your purchase isn't quite right, our return process is designed to be simple and transparent.
+        </p>
+      </div>
+
+      <main>
+        {/* Section 1: Return Eligibility */}
+        <section style={{ marginBottom: '50px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+            <FaUndo size={24} color={themePrimary} />
+            <h2 style={{ fontSize: '24px', fontWeight: '800', color: themeDark, margin: 0 }}>1. Return Eligibility</h2>
+          </div>
+          <p style={{ fontSize: '16px', lineHeight: '1.7', color: '#5a4642', marginBottom: '15px' }}>
+            Items must be returned within <strong>7 days</strong> of delivery. To be eligible, items must be:
           </p>
-          <div className="p-6 bg-gray-50 border-l-8" style={{ borderColor: themePrimary, marginTop: '20px' }}>
-            <p className="font-bold leading-[2]">Note: Innerwear and masks are strictly non-returnable.</p>
+          <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '15px' }}>
+            {['Unused & Unwashed', 'Original Packaging', 'All Tags Attached', 'No Perfume/Stains'].map((item, idx) => (
+              <li key={idx} style={{ padding: '12px', background: '#fff', border: '1px solid #eee', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <FaCheckCircle color="#038d63" /> 
+                <span style={{ color: '#5a4642', fontSize: '14px', fontWeight: '500' }}>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Non-Returnable Alert Box */}
+        <div style={{ 
+          backgroundColor: themeDark, 
+          padding: '25px', 
+          borderRadius: '15px', 
+          marginBottom: '50px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '20px',
+          color: '#fff'
+        }}>
+          <FaExclamationTriangle size={40} color={themePrimary} />
+          <div>
+            <h4 style={{ margin: '0 0 5px 0', fontSize: '18px', color: themePrimary }}>Strictly Non-Returnable</h4>
+            <p style={{ margin: 0, opacity: '0.8', fontSize: '14px' }}>
+              For hygiene reasons, <strong>Innerwear, Masks, and Jewelry</strong> cannot be returned or exchanged.
+            </p>
           </div>
         </div>
-      </div>
+
+        {/* Section 2: Refund Process */}
+        <section style={{ marginBottom: '50px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+            <FaMoneyBillWave size={24} color={themePrimary} />
+            <h2 style={{ fontSize: '24px', fontWeight: '800', color: themeDark, margin: 0 }}>2. Refund Process</h2>
+          </div>
+          <div style={{ background: '#f9f9f9', padding: '25px', borderRadius: '12px', border: '1px solid #eee' }}>
+            <p style={{ color: '#5a4642', lineHeight: '1.8', margin: 0 }}>
+              Once we receive your item, it undergoes a <strong>48-hour quality check</strong>. After approval:
+            </p>
+            <ul style={{ marginTop: '15px', color: '#666', fontSize: '15px', lineHeight: '2' }}>
+              <li><strong>Prepaid Orders:</strong> Refund credited to original payment mode (5-7 days).</li>
+              <li><strong>COD Orders:</strong> Refund as ShopCart Wallet credits or Bank Transfer.</li>
+              <li>Shipping charges are non-refundable.</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Contact Support */}
+        <section style={{ textAlign: 'center', borderTop: '1px solid #eee', paddingTop: '40px' }}>
+          <h2 style={{ fontSize: '22px', fontWeight: '700', color: themeDark, margin: '0 0 10px 0' }}>Initiate a Return?</h2>
+          <p style={{ color: '#888', fontSize: '14px', marginBottom: '20px' }}>Go to 'My Orders' section or contact our support team.</p>
+          <button 
+            onClick={() => navigate('/contact')}
+            style={{ backgroundColor: themePrimary, color: '#fff', padding: '12px 35px', borderRadius: '50px', border: 'none', fontWeight: '700', cursor: 'pointer', transition: '0.3s' }}
+            onMouseEnter={(e) => e.target.style.backgroundColor = themeDark}
+            onMouseLeave={(e) => e.target.style.backgroundColor = themePrimary}
+          >
+            Contact Support
+          </button>
+        </section>
+      </main>
     </div>
   );
 }

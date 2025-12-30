@@ -25,7 +25,7 @@
 
 .logo-text {
   color: #EEEEEE;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 600;
 }
 /* ===== CENTER LINKS ===== */
@@ -588,7 +588,7 @@
   }
 
   .logo-text {
-    font-size: 18px;
+    font-size: 30px;
   }
 
   /* 2. Top Right Icons (Search & Heart) */
@@ -720,7 +720,7 @@
 .nav-left { display: flex; align-items: center; gap: 15px; }
 .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
 .logo-icon { font-size: 22px; color: #E16C5B; }
-.logo-text { color: #EEEEEE; font-size: 20px; font-weight: 600; }
+.logo-text { color: #EEEEEE; font-size: 30px; font-weight: 600; }
 
 .nav-center { display: flex; gap: 25px; flex: 1; justify-content: center; }
 .nav-center a { color: #EEEEEE; text-decoration: none; font-weight: 500; }
@@ -807,7 +807,7 @@
   .logo-text {
   display: block !important;       /* Ye sabse zaroori hai */
     visibility: visible !important;  /* Agar hidden ho toh dikh jaye */
-    font-size: 16px !important;      /* Mobile ke hisaab se thoda chota size */
+    font-size: 25px !important;      /* Mobile ke hisaab se thoda chota size */
     color: #EEEEEE !important;       /* White color ensure karne ke liye */
     margin-left: 5px;
   }
@@ -1054,4 +1054,699 @@
   body {
     padding-bottom: 80px !important; 
   }
+}
+
+/* --- MOBILE MENU DRAWER STYLING (Strictly Mobile Only) --- */
+@media screen and (max-width: 768px) {
+  .desktop-only { display: none !important; }
+
+  /* Drawer Overlay */
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 9998;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  .menu-overlay.active { visibility: visible; opacity: 1; }
+
+  /* The Slide-in Drawer */
+  .mobile-drawer {
+    position: fixed;
+    top: 0;
+    left: -280px; /* Hidden by default */
+    width: 280px;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 9999;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 0 25px rgba(0,0,0,0.2);
+    border-radius: 0 30px 30px 0; /* Premium Rounded Corner */
+  }
+  .mobile-drawer.open { left: 0; }
+
+  /* Drawer Header (User Section) */
+  .drawer-header {
+    padding: 40px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .user-profile-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .drawer-avatar {
+    font-size: 55px;
+    color: var(--secondary); /* #713C46 */
+  }
+  .user-info h3 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--dark); /* #462C2F */
+    font-weight: 800;
+  }
+  .user-info a {
+    color: var(--primary); /* #E16C5B */
+    font-size: 13px;
+    text-decoration: none;
+    opacity: 0.8;
+  }
+  .close-drawer { font-size: 22px; color: var(--gray); cursor: pointer; }
+
+  /* Drawer Links */
+  .drawer-links {
+    padding: 10px 0;
+    flex: 1;
+    overflow-y: auto;
+  }
+  .drawer-links a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 25px;
+    color: var(--secondary);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.2s;
+  }
+  .drawer-links a svg { font-size: 20px; color: var(--primary); }
+  .drawer-links a:active { background: #fdf2f0; color: var(--primary); }
+
+  .drawer-divider {
+    height: 1px;
+    background: #eee;
+    margin: 10px 25px;
+  }
+
+  /* Drawer Footer */
+  .drawer-footer {
+    padding: 20px 25px 40px;
+  }
+  .logout-drawer-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: none;
+    border: none;
+    color: var(--secondary);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    padding: 0;
+  }
+  .logout-drawer-btn svg { font-size: 20px; }
+
+  /* Header Fixes */
+  .navbar { height: 65px; padding: 0 15px; background: var(--dark); }
+  .mobile-menu-trigger { display: block; font-size: 24px; color: #fff; }
+  .logo-text { font-size: 18px !important; }
+}
+
+/* --- COLORS --- */
+:root {
+  --primary: #E16C5B;
+  --secondary: #713C46;
+  --dark: #462C2F;
+  --light: #EEEEEE;
+  --white: #ffffff;
+}
+
+/* --- BASE NAVBAR --- */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(90deg, var(--secondary), var(--dark));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.logo-icon { font-size: 25px; color: var(--primary); }
+.logo-text { color: var(--light); font-size: 30px; font-weight: 600; }
+
+.nav-center { display: flex; gap: 30px; }
+.nav-center a { color: var(--light); text-decoration: none; font-weight: 500; font-size: 16px; transition: 0.3s; }
+.nav-center a:hover { color: var(--primary); }
+
+.nav-right { display: flex; align-items: center; gap: 20px; }
+
+/* --- SEARCH & DROPDOWN --- */
+.search-box { display: flex; align-items: center; gap: 8px; background: var(--light); padding: 6px 14px; border-radius: 20px; }
+.search-box input { border: none; outline: none; background: transparent; width: 160px; font-size: 14px; }
+.icon-btn, .profile-icon { color: var(--light); font-size: 22px; cursor: pointer; position: relative; }
+.profile-dropdown { position: absolute; top: 40px; right: 0; background: white; min-width: 140px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 8px; padding: 10px 0; z-index: 100; }
+.profile-dropdown a, .profile-dropdown button { padding: 10px 15px; display: block; width: 100%; text-decoration: none; color: #333; border: none; background: none; text-align: left; }
+
+/* --- MOBILE ONLY STYLES --- */
+@media screen and (max-width: 768px) {
+  .desktop-only { display: none !important; }
+
+  /* Bottom Navigation */
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background: var(--dark);
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid var(--secondary);
+    z-index: 9000;
+  }
+  .mob-nav-item { display: flex; flex-direction: column; align-items: center; color: var(--light); text-decoration: none; font-size: 11px; opacity: 0.8; }
+  .mob-nav-item svg { font-size: 22px; margin-bottom: 2px; }
+  .mob-nav-item:active { color: var(--primary); transform: scale(0.9); }
+
+  /* Drawer Overlay */
+  .menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(3px); z-index: 9998; visibility: hidden; opacity: 0; transition: 0.3s; }
+  .menu-overlay.active { visibility: visible; opacity: 1; }
+
+  /* Slide-in Drawer */
+  .mobile-drawer {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    background: var(--white);
+    z-index: 9999;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 30px 30px 0;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.2);
+  }
+  .mobile-drawer.open { left: 0; }
+
+  .drawer-header { padding: 40px 20px 20px; display: flex; justify-content: space-between; align-items: flex-start; }
+  .drawer-avatar { font-size: 50px; color: var(--secondary); }
+  .user-info h3 { font-size: 18px; color: var(--dark); font-weight: 800; }
+  .close-drawer { font-size: 24px; color: #ccc; }
+
+  .drawer-links { flex: 1; padding: 10px 0; }
+  .drawer-links a { display: flex; align-items: center; gap: 15px; padding: 15px 25px; color: var(--secondary); text-decoration: none; font-size: 16px; font-weight: 500; }
+  .drawer-links a svg { color: var(--primary); }
+  .drawer-divider { height: 1px; background: #eee; margin: 10px 25px; }
+
+  .logout-drawer-btn { margin: 20px 25px 40px; border: none; background: none; display: flex; align-items: center; gap: 10px; color: var(--secondary); font-weight: 700; font-size: 16px; }
+
+  /* Mobile Search Overlay */
+  .expanded-search { position: absolute; top: 0; left: 0; width: 100%; height: 60px; background: var(--white); display: flex; align-items: center; padding: 0 15px; z-index: 10; gap: 10px; }
+  .expanded-search input { flex: 1; border: none; outline: none; font-size: 16px; }
+
+  .badge { position: absolute; top: -8px; right: -8px; background: var(--primary); color: white; padding: 2px 6px; border-radius: 50%; font-size: 10px; }
+  
+  body { padding-bottom: 70px; } /* Space for bottom nav */
+}
+
+/* Icons hide/show logic */
+.mobile-menu-trigger, .mobile-search-wrapper { display: none; }
+@media screen and (max-width: 768px) {
+  .mobile-menu-trigger, .mobile-search-wrapper { display: block; }
+}
+
+/* Drawer Header ke ander "Manage Account" ka look */
+.manage-acc-link {
+  color: var(--primary) !important; /* #E16C5B */
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(225, 108, 91, 0.1); /* Light highlight background */
+  padding: 4px 10px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+/* Ensure hamburger links are clean */
+.drawer-links a {
+  border-radius: 12px;
+  margin: 2px 15px;
+  padding: 12px 15px !important;
+}
+
+.drawer-links a:active {
+  background-color: #f8f8f8;
+}
+
+:root {
+  --primary: #E16C5B;
+  --secondary: #713C46;
+  --dark: #462C2F;
+  --light: #EEEEEE;
+  --white: #ffffff;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(90deg, var(--secondary), var(--dark));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 2000;
+}
+
+/* SEARCH BAR FIX - Mobile Overlay */
+.expanded-search-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px; /* Navbar height ke barabar */
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  z-index: 3000;
+  animation: fadeIn 0.2s ease-in;
+}
+
+.expanded-search-box {
+  width: 100%;
+  max-width: 500px;
+  background: var(--white);
+  height: 45px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  gap: 10px;
+  border: 2px solid var(--primary);
+}
+
+.expanded-search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+  color: #333;
+}
+
+.close-search { color: var(--secondary); font-size: 20px; cursor: pointer; }
+.inner-search-icon { color: var(--secondary); }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* MOBILE DRAWER & BOTTOM NAV STYLES */
+@media screen and (max-width: 768px) {
+  .desktop-only { display: none !important; }
+
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background: var(--dark);
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid var(--secondary);
+    z-index: 2500;
+  }
+
+  .mob-nav-item { color: var(--light); text-decoration: none; display: flex; flex-direction: column; align-items: center; font-size: 10px; }
+  .mob-nav-item svg { font-size: 22px; margin-bottom: 2px; }
+
+  .mobile-drawer {
+    position: fixed;
+    top: 0;
+    left: -285px;
+    width: 280px;
+    height: 100vh;
+    background: var(--white);
+    z-index: 5000;
+    transition: 0.4s;
+    border-radius: 0 30px 30px 0;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.3);
+  }
+
+  .mobile-drawer.open { left: 0; }
+
+  .manage-acc-link {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    background: rgba(225, 108, 91, 0.1);
+    padding: 5px 12px;
+    border-radius: 15px;
+    display: inline-block;
+  }
+}
+
+/* Common Styles */
+.menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 4000; visibility: hidden; opacity: 0; transition: 0.3s; }
+.menu-overlay.active { visibility: visible; opacity: 1; }
+.logo-text { color: var(--light); font-weight: bold; font-size: 26px; }
+.logo-icon { color: var(--primary); font-size: 26px; }
+
+/* --- USER INITIAL AVATAR --- */
+.user-avatar-initial {
+  width: 55px;
+  height: 55px;
+  background-color: var(--primary); /* #E16C5B */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(225, 108, 91, 0.3);
+}
+
+.user-avatar-initial.small { width: 35px; height: 35px; font-size: 14px; cursor: pointer; }
+.user-avatar-initial.tiny { width: 24px; height: 24px; font-size: 10px; margin-bottom: 3px; }
+
+/* Drawer Header Section */
+.user-profile-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.user-profile-section:hover {
+  background: #fdf2f1;
+}
+
+.drawer-brand-name {
+  color: var(--secondary);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+/* --- SEARCH OVERLAY FIX (Image 6c38c4 correction) --- */
+.expanded-search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  z-index: 9999;
+}
+
+.search-bar-inner {
+  width: 100%;
+  background: white;
+  height: 45px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.search-bar-inner input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+}
+
+.close-search-btn {
+  color: #999;
+  font-size: 20px;
+  cursor: pointer;
+}
+.manage-acc-link {
+  color: var(--primary); /* #E16C5B */
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(225, 108, 91, 0.1); /* Light peach background */
+  padding: 5px 12px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.user-info h3 {
+  font-size: 20px;
+  color: var(--dark);
+  margin: 0;
+  font-weight: 800;
+}
+/* 1. Drawer ka bada icon */
+.profile-icon-main {
+  font-size: 60px; /* Isse aur bada karna ho to 70px, 80px kar lena */
+  color: #462C2F; /* Tera theme color */
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+/* 2. Desktop Navbar ka icon */
+.profile-icon-nav {
+  font-size: 32px; /* Standard navbar size */
+  color: #462C2F;
+  cursor: pointer;
+}
+
+/* 3. Bottom Nav ka tiny icon */
+.profile-icon-bottom {
+  font-size: 24px;
+  color: #462C2F;
+  margin-bottom: 2px;
+}
+
+/* Hover effect for all icons */
+.profile-icon-main:hover, 
+.profile-icon-nav:hover {
+  transform: scale(1.05);
+  color: #E16C5B; /* Primary color on hover */
+}
+
+/* Letter wala circle background */
+.user-avatar-initial {
+  background-color: #462C2F; /* Tera dark brown theme */
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Default Icon Color (Jab login na ho) */
+.profile-icon-main {
+  color: #8e8e93; /* Screenshot wala gray color */
+}
+
+/* --- Sizes (Manually adjust as per your need) --- */
+
+/* Drawer ke liye bada icon */
+.large {
+  width: 60px !important;
+  height: 60px !important;
+  font-size: 28px !important;
+}
+
+/* Desktop navbar ke liye */
+.small {
+  width: 35px !important;
+  height: 35px !important;
+  font-size: 16px !important;
+}
+
+/* Bottom Nav ke liye tiny icon */
+.tiny {
+  width: 24px !important;
+  height: 24px !important;
+ font-size: 12px !important;
+}
+
+/* --- SHARED BASE STYLES --- */
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #4a242a; /* Your dark maroon shade */
+  height: 70px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+/* --- DESKTOP VIEW FIXES (Screen > 1024px) --- */
+@media (min-width: 1024px) {
+  .navbar {
+    padding: 0 30px !important; 
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  /* 1. Shopcart ke baad gap aur Nav Links */
+  .nav-left {
+    flex: 0 0 auto;
+  }
+  /* Force hide mobile-only elements on Desktop */
+  .mobile-menu-trigger, 
+  .mobile-drawer, 
+  .mobile-bottom-nav, 
+  .mobile-search-wrapper,
+  .menu-overlay {
+    display: none !important;
+  }
+
+  /* Show Desktop Specific Layout */
+  .desktop-nav-links {
+    display: flex !important;
+    gap: 30px;
+    align-items: center;
+    margin-left: -30px;
+    flex-grow:1;
+  }
+
+  .desktop-search {
+    display: block !important;
+  }
+  .nav-right {
+    display: flex !important;
+    align-items: center;
+    gap: 50px; /* Search aur Contact ke beech ka bada gap */
+    flex: 0 0 auto;
+  }
+  .nav-right-icons {
+    display: flex !important;
+    gap: 25px;
+    align-items: center;
+  }
+   .search-container {
+    width: 300px !important;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    background: #f1f1f1;
+    padding: 6px 15px;
+    border-radius: 4px;
+  }
+  .hide-on-mobile {
+    display: flex !important;
+    align-items: center;
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+  }
+}
+
+/* --- MOBILE VIEW (Screen < 1024px) --- */
+@media (max-width: 1023px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+
+  /* Force hide desktop-only elements on Mobile */
+  .desktop-nav-links, 
+  .desktop-search, 
+  .nav-right-icons .hide-on-mobile {
+    display: none !important;
+  }
+
+  /* Mobile Logo Styling */
+  .logo-text {
+    font-size: 35px;
+  }
+}
+
+/* --- ELEMENT STYLING --- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.desktop-nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background: #f1f1f1;
+  padding: 5px 12px;
+  border-radius: 4px;
+  width: 280px;
+}
+
+.search-container input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  padding-left: 8px;
+  color: #333;
+}
+
+/* The badge for cart/wishlist */
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #e07a5f; /* Coral red color */
+  color: white;
+  font-size: 10px;
+  min-width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+}
+.user-avatar-initial.small, 
+.profile-icon-main.small {
+  font-size: 26px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  padding: 2px;
 }

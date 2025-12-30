@@ -1,224 +1,257 @@
+/* --- COLOR PALETTE --- */
 :root {
-    --theme-primary: #E16C5B;
-    --theme-dark: #3d1f1a;
-    --text-muted: #7a6a67;
+  --primary: #E16C5B;
+  --light: #EEEEEE;
+  --secondary: #713C46;
+  --dark: #462C2F;
+  --white: #ffffff;
+  --gray: #cfd8dc;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
 
+/* --- GLOBAL RESET: Scrollbar hatane ke liye --- */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; 
+  width: 100%;
+  overflow: auto; 
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%) no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100%;
+}
+
+/* --- PAGE CONTAINER --- */
 .login-page {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f9f9f9;
-    padding: 15px; /* Mobile spacing */
+  height: 100vh; /* min-height hata kar height kiya taaki lock rahe */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Desktop/Mobile dono pe beech mein rakhega */
+  padding: 20px;
+  overflow: hidden; /* Sirf isi container ka scroll band hoga */
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%) no-repeat center center fixed;
+  background-size: cover;
+  position: fixed; /* Ye magic line hai jo login page ko hillne nahi degi */
+  top: 0;
+  left: 0;
 }
 
+/* --- LOGO: SHARED STYLES --- */
+.mobile-header-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 20px;
+  padding: 0 5px;
+}
+
+.mobile-logo-icon { font-size: 24px; color: var(--primary); }
+.mobile-logo-name { font-size: 22px; font-weight: 800; color: var(--dark); }
+
+/* --- LOGIN CARD --- */
 .login-card {
-    max-width: 1000px;
-    width: 100%;
-    display: flex;
-    flex-direction: column; /* Default: Mobile column */
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    overflow: hidden;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 92vh; /* Isse card kabhi niche se kategi nahi */
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  overflow: hidden;
 }
 
-/* DESKTOP VIEW - Row Layout */
+/* --- BRANDING SECTION --- */
+.login-branding { display: none; }
+
+/* --- FORM CONTAINER --- */
+.login-form-container {
+  width: 100%;
+  padding: 30px 25px; /* Thoda tight kiya taaki sab fit ho jaye */
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: none; /* Firefox ke liye */
+  -ms-overflow-style: none;
+  overflow-y: auto; /* Agar screen bahut choti ho to sirf card ke andar scroll hoga */
+}
+
+/* --- FORM HEADER --- */
+.form-header { text-align: center; margin-bottom: 25px; }
+.form-header h3 { font-size: 28px; color: var(--dark); font-weight: 800; margin-bottom: 6px; }
+.form-header p { color: var(--secondary); font-size: 14px; opacity: 0.7; }
+
+/* --- INPUTS --- */
+.input-group { margin-bottom: 15px; } /* Margin kam ki */
+.input-group label { display: block; font-size: 12px; font-weight: 700; color: var(--dark); margin-bottom: 8px; text-transform: uppercase; }
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  background: #f8fbfb !important;
+  border: 1px solid #eef2f2 !important;
+  border-radius: 12px;
+  padding: 12px 15px;
+}
+
+.input-icon { color: var(--primary); margin-right: 12px; font-size: 18px; }
+.input-wrapper input { border: none; outline: none; width: 100%; font-size: 15px; color: var(--dark); background: transparent; }
+
+/* --- OPTIONS & BUTTON --- */
+.form-options { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 20px; }
+.remember-me { color: var(--secondary); cursor: pointer; display: flex; align-items: center; gap: 5px; }
+.forgot-pass { color: var(--primary); font-weight: 700; text-decoration: none; font-size: 12px; }
+
+.login-btn {
+  width: 100%;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* --- DIVIDER --- */
+.divider { display: flex; align-items: center; margin: 15px 0; color: var(--gray); font-size: 12px; font-weight: 700; }
+.divider::before, .divider::after { content: ''; flex: 1; border-bottom: 1px solid #eee; }
+.divider span { padding: 0 10px; text-transform: uppercase; }
+
+/* --- GOOGLE BUTTON --- */
+.google-btn {
+  width: 100%;
+  background: white;
+  border: 1px solid #eee;
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-weight: 600;
+  color: var(--dark);
+  cursor: pointer;
+}
+
+.google-btn img { width: 18px; }
+
+.form-footer { margin-top: 20px; text-align: center; font-size: 14px; color: var(--secondary); }
+.create-acc { color: var(--primary); font-weight: 800; text-decoration: none; }
+
+/* --- DESKTOP VIEW CHANGES --- */
 @media (min-width: 769px) {
-    .login-card {
-        flex-direction: row;
-        border-radius: 30px;
-    }
-}
-
-/* BRANDING SECTION */
+  .login-card {
+    flex-direction: row;
+    height: 600px; /* Desktop pe premium fixed look */
+  }
+ /* --- BRANDING SECTION FIX --- */
 .login-branding {
-    flex: 1;
-    position: relative;
-    min-height: 200px; /* Small for mobile */
-    display: flex;
-    align-items: flex-end;
-    padding: 30px 20px;
-}
-
-@media (min-width: 769px) {
-    .login-branding {
-        min-height: 550px;
-        padding: 40px;
-        min-width: 400px;
-    }
+  display: flex;
+  flex: 1;
+  position: relative;
+  padding: 60px 50px;
+  align-items: flex-end; /* Text bottom left mein settle hoga */
+  overflow: hidden;
 }
 
 .branding-img {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    object-fit: cover;
-    opacity: 0.6;
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .branding-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, var(--theme-dark), transparent);
-    z-index: 1;
+  position: absolute;
+  inset: 0;
+  /* Gradient thoda dark rakha hai taaki white text chamke */
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+  z-index: 1;
 }
 
 .branding-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
+  position: relative;
+  z-index: 2;
+  text-align: left;
 }
 
+/* SHOPCART Logo style in Branding Area */
 .login-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
 }
 
 .logo-icon-svg {
-    font-size: 24px;
-    color: var(--theme-primary);
+  font-size: 22px;
+  color: var(--primary); /* #E16C5B */
 }
 
 .logo-name {
-    font-size: 20px;
-    font-weight: 800;
-    color: #fff;
+  font-size: 20px;
+  font-weight: 800; /* Max thickness */
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
+/* "Premium Collections Now Accessible." Styling */
 .branding-title {
-    font-size: 22px;
-    color: #fff;
-    font-weight: 800;
-    line-height: 1.2;
+font-size: 28px; 
+  font-weight: 800; 
+  line-height: 1.2; /* Spacing thodi aur saaf ki hai */
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.5px;
+  text-transform: capitalize;
 }
 
-@media (min-width: 769px) {
-    .branding-title { font-size: 36px; }
-    .logo-icon-svg { font-size: 30px; }
-    .logo-name { font-size: 24px; }
+/* Targeting the <span>Now Accessible.</span> */
+.branding-title span {
+  color: var(--primary); /* #E16C5B */
+  display: block; 
+  font-size: 26px;
 }
 
-.branding-title span { color: var(--theme-primary); }
-
-/* FORM SECTION */
+/* --- SCROLLBAR HIDE (Card ke andar wali line) --- */
 .login-form-container {
-    flex: 1.2;
-    padding: 30px 20px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+.login-form-container::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+  .login-branding {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex: 1;
+    position: relative;
+    padding: 40px;
+    align-items: flex-end;
+  }
+
+  .branding-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+  .branding-overlay { position: absolute; inset: 0; background: linear-gradient(to top, var(--dark), transparent); z-index: 1; }
+  .branding-content { position: relative; z-index: 2; color: var(--white); }
+
+  .login-form-container { flex: 1.2; padding: 40px 60px; overflow-y: hidden; } /* Desktop pe no internal scroll */
+  .mobile-header-logo { display: none; }
 }
 
-@media (min-width: 769px) {
-    .login-form-container { padding: 60px; }
+/* --- MOBILE SPECIFIC --- */
+@media (max-width: 768px) {
+  .login-page { justify-content: center; padding: 10px; }
+  .login-card { max-height: 95vh; } /* Mobile pe thoda bada rakha hai */
+  .form-header h3 { font-size: 24px; }
+  .login-branding { display: none; }
 }
 
-.form-header h3 {
-    font-size: 24px;
-    color: var(--theme-dark);
-}
-
-.form-header p {
-    color: var(--text-muted);
-    font-size: 14px;
-}
-
-.login-form { margin-top: 30px; }
-
-.input-group { margin-bottom: 20px; }
-
-.input-group label {
-    display: block;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--theme-dark);
-    margin-bottom: 5px;
-}
-
-.input-wrapper {
-    display: flex;
-    align-items: center;
-    border-bottom: 2px solid #eee;
-    padding: 8px 0;
-    transition: 0.3s;
-}
-
-.input-wrapper:focus-within { border-color: var(--theme-primary); }
-
-.input-icon { color: #aaa; margin-right: 12px; }
-
-.input-wrapper input {
-    border: none;
-    outline: none;
-    width: 100%;
-    font-size: 16px;
-    color: var(--theme-dark);
-}
-
-.form-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 13px;
-    margin-bottom: 25px;
-}
-
-.remember-me { color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 5px; }
-
-.forgot-pass { color: var(--theme-primary); font-weight: 600; text-decoration: none; }
-
-.login-btn {
-    width: 100%;
-    background-color: var(--theme-primary);
-    color: #fff;
-    padding: 14px;
-    border-radius: 12px;
-    border: none;
-    font-weight: 700;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    box-shadow: 0 10px 20px rgba(225, 108, 91, 0.2);
-    transition: 0.3s;
-}
-
-.login-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 25px rgba(225, 108, 91, 0.3);
-}
-
-.form-footer {
-    margin-top: 30px;
-    text-align: center;
-    font-size: 14px;
-    color: var(--text-muted);
-}
-
-.create-acc {
-    color: var(--theme-dark);
-    font-weight: 700;
-    text-decoration: none;
-    border-bottom: 2px solid var(--theme-primary);
-}
-.branding-text {
-    color: rgba(255, 255, 255, 0.8); /* Thoda transparent white */
-    font-size: 15px;
-    line-height: 1.6;
-    margin-top: 15px;
-    max-width: 350px;
-    font-weight: 400;
-    display: none; /* Mobile par hide rakhenge */
-}
-@media (min-width: 769px) {
-    .branding-text {
-        display: block;
-    }
-}

@@ -1,157 +1,132 @@
-
-// import React from 'react';
-
-// export default function DeliveryInfo() {
-//   const scrollToSection = (id) => {
-//     const element = document.getElementById(id);
-//     if (element) {
-//       element.scrollIntoView({ behavior: "smooth", block: "start" });
-//     }
-//   };
-
-//   const themePrimary = "#E16C5B";
-//   const themeDark = "#3d1f1a"; 
-
-//   return (
-//     <div className="max-w-[1200px] mx-auto px-5 py-10 lg:pt-5">
-//       {/* Header Section */}
-//       <header className="text-center mb-16">
-//         <h1 className="text-5xl font-extrabold mb-4" style={{ color: themeDark }}>
-//           Delivery Information
-//         </h1>
-//         <p className="text-sm font-semibold uppercase tracking-widest" style={{ color: themePrimary }}>
-//           Fast, Reliable & Secure Shipping to your doorstep
-//         </p>
-//       </header>
-
-//       <div className="flex flex-col lg:flex-row gap-16 relative">
-//         {/* Main Content Area */}
-//         <main className="flex-[2]">
-//           <section className="mb-12">
-//             <p className="text-lg leading-relaxed mb-6" style={{ color: "#5a4a47" }}>
-//               We are committed to delivering your orders as quickly and efficiently as possible. Our logistics network ensures that your products reach you in perfect condition, no matter where you are.
-//             </p>
-//           </section>
-
-//           {/* Section 1 */}
-//           <div className="mb-12 scroll-mt-24" id="methods">
-//             <h2 className="text-2xl font-bold mb-4 inline-block border-b-4 pb-1" 
-//                 style={{ color: themeDark, borderBottomColor: themePrimary }}>
-//               1. Shipping Methods & Timelines
-//             </h2>
-//             <div className="space-y-4">
-//               <div className="p-4 rounded-lg border-l-4 bg-gray-50" style={{ borderLeftColor: themePrimary }}>
-//                 <p className="font-bold text-lg" style={{ color: themeDark }}>Standard Delivery</p>
-//                 <p style={{ color: "#5a4a47" }}>Estimated 3-7 business days. Free on orders above ₹999.</p>
-//               </div>
-//               <div className="p-4 rounded-lg border-l-4 bg-gray-50" style={{ borderLeftColor: themePrimary }}>
-//                 <p className="font-bold text-lg" style={{ color: themeDark }}>Express Delivery</p>
-//                 <p style={{ color: "#5a4a47" }}>Estimated 1-3 business days. Priority processing and handling.</p>
-//               </div>
-//               <div className="p-4 rounded-lg border-l-4 bg-gray-50" style={{ borderLeftColor: themePrimary }}>
-//                 <p className="font-bold text-lg" style={{ color: themeDark }}>International Shipping</p>
-//                 <p style={{ color: "#5a4a47" }}>Estimated 7-14 business days depending on customs and location.</p>
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* Section 2 */}
-//           <div className="mb-12 scroll-mt-24" id="tracking">
-//             <h2 className="text-2xl font-bold mb-4 inline-block border-b-4 pb-1" 
-//                 style={{ color: themeDark, borderBottomColor: themePrimary }}>
-//               2. Real-Time Tracking
-//             </h2>
-//             <p className="mb-4 leading-relaxed" style={{ color: "#5a4a47" }}>
-//               Stay updated with every step of your package. Once your order leaves our warehouse, we send you a tracking link via <strong>Email & SMS</strong>. You can monitor your package directly on our website or through our courier partner's portal.
-//             </p>
-//           </div>
-
-//           {/* Section 3 */}
-//           <div className="mb-12 scroll-mt-24" id="packaging">
-//             <h2 className="text-2xl font-bold mb-4 inline-block border-b-4 pb-1" 
-//                 style={{ color: themeDark, borderBottomColor: themePrimary }}>
-//               3. Packaging & Handling
-//             </h2>
-//             <p className="leading-relaxed" style={{ color: "#5a4a47" }}>
-//               Every item is carefully checked for quality before being packed. We use eco-friendly and durable packaging materials to ensure your items are protected from weather and handling during transit.
-//             </p>
-//           </div>
-
-//           {/* Section 4 */}
-//           <div className="mb-12 scroll-mt-24" id="issues">
-//             <h2 className="text-2xl font-bold mb-4 inline-block border-b-4 pb-1" 
-//                 style={{ color: themeDark, borderBottomColor: themePrimary }}>
-//               4. Delivery Issues & Support
-//             </h2>
-//             <p className="mb-4" style={{ color: "#5a4a47" }}>Facing a problem? Don't worry, we've got you covered:</p>
-//             <ul className="list-disc ml-6 space-y-3" style={{ color: "#5a4a47" }}>
-//               <li><strong>Delayed Delivery:</strong> If your order exceeds the timeline, contact us immediately.</li>
-//               <li><strong>Damaged on Arrival:</strong> Please take a photo and reach out within 24 hours of delivery.</li>
-//               <li><strong>Address Changes:</strong> Address changes are only possible before the order is dispatched.</li>
-//             </ul>
-//           </div>
-//         </main>
-
-//         {/* Sidebar Navigation */}
-//         <aside className="hidden lg:block flex-1">
-//           <div className="sticky top-24 border-l-2 border-gray-100 pl-8">
-//             <h3 className="text-sm font-bold uppercase tracking-widest mb-6" style={{ color: themeDark }}>
-//               Delivery Guide
-//             </h3>
-//             <ul className="space-y-4">
-//               {[
-//                 { name: 'Shipping Methods', id: 'methods' },
-//                 { name: 'Tracking Order', id: 'tracking' },
-//                 { name: 'Packaging Info', id: 'packaging' },
-//                 { name: 'Support & Issues', id: 'issues' }
-//               ].map((item, index) => (
-//                 <li key={item.id} 
-//                     onClick={() => scrollToSection(item.id)}
-//                     className="cursor-pointer text-sm transition-all duration-300 hover:translate-x-1"
-//                     style={{ color: "#7a6a67" }}>
-//                   <span className="mr-2 font-bold" style={{ color: themePrimary }}>0{index + 1}.</span> {item.name}
-//                 </li>
-//               ))}
-//             </ul>
-//             <button 
-//               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-//               className="mt-10 text-xs font-bold transition-colors hover:underline"
-//               style={{ color: themePrimary }}>
-//               BACK TO TOP ↑
-//             </button>
-//           </div>
-//         </aside>
-//       </div>
-//     </div>
-//   );
-// }
-
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { FaTruck, FaClock, FaMapMarkerAlt, FaCheckCircle } from 'react-icons/fa';
 
 export default function DeliveryInfo() {
-  const themePrimary = "#E16C5B";
-  const themeDark = "#3d1f1a"; 
+  const themePrimary = "#E16C5B"; //
+  const themeDark = "#3d1f1a";    //
+  const navigate = useNavigate();
 
   return (
-    <div className="max-w-[1200px] mx-auto px-4 py-10">
-      <header className="text-center" style={{ marginBottom: '80px' }}>
-        <h1 className="text-3xl md:text-5xl font-extrabold" style={{ color: themeDark }}>Delivery Info</h1>
+    <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0px 20px 60px 20px', fontFamily: 'poppins, sans-serif' }}>
+      
+      {/* Header Section - Spacing Fixed */}
+      <header style={{ textAlign: 'center', marginBottom: '30px', paddingTop: '10px' }}>
+        <h1 style={{ 
+          fontSize: 'clamp(32px, 5vw, 52px)', 
+          fontWeight: '900', 
+          color: themeDark, 
+          margin: '0', 
+          lineHeight: '1.1' 
+        }}>
+          Delivery Info
+        </h1>
+        
+        <div style={{ marginTop: '8px' }}>
+          <span style={{ 
+            color: themePrimary, 
+            fontWeight: '700', 
+            fontSize: '13px', 
+            textTransform: 'uppercase', 
+            letterSpacing: '1.5px',
+            backgroundColor: '#fff5f4',
+            padding: '4px 12px',
+            borderRadius: '50px'
+          }}>
+            Fast & Reliable Shipping
+          </span>
+        </div>
+
+        <p style={{ color: '#888', fontSize: '12px', fontWeight: '500', marginTop: '12px' }}>
+          Last Updated: <span style={{ color: themePrimary }}>December 30, 2025</span>
+        </p>
       </header>
 
-      <div style={{ marginBottom: '70px' }}>
-        <h2 className="text-2xl md:text-3xl font-bold border-b-4 pb-2" 
-            style={{ color: themeDark, borderBottomColor: themePrimary, marginBottom: '40px', display: 'inline-block' }}>
-          1. Shipping Timelines
-        </h2>
-        <div style={{ marginTop: '20px' }} className="space-y-10">
-          <div className="p-8 border rounded-xl shadow-sm" style={{ marginBottom: '30px' }}>
-            <h3 className="text-xl font-bold mb-4" style={{ color: themeDark }}>Standard Shipping</h3>
-            <p className="text-base md:text-lg leading-[2]" style={{ color: "#5a4a47" }}>
-              Takes 3-7 business days. We provide tracking updates via SMS and Email once the order is dispatched.
-            </p>
-          </div>
-        </div>
+      {/* Intro Box */}
+      <div style={{ 
+        backgroundColor: '#fdfdfd', 
+        borderLeft: `5px solid ${themePrimary}`, 
+        padding: '25px', 
+        marginBottom: '40px', 
+        borderRadius: '8px', 
+        boxShadow: '0 4px 20px rgba(0,0,0,0.05)' 
+      }}>
+        <p style={{ fontSize: '17px', lineHeight: '1.7', color: '#5a4a47', margin: 0 }}>
+          At <strong>ShopCart</strong>, we ensure your orders reach you safely and on time. We partner with top-tier courier services to provide real-time tracking and secure handling.
+        </p>
       </div>
+
+      <main>
+        {/* Section 1: Shipping Timelines */}
+        <section style={{ marginBottom: '50px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '25px' }}>
+            <FaClock size={24} color={themePrimary} />
+            <h2 style={{ fontSize: '24px', fontWeight: '800', color: themeDark, margin: 0 }}>1. Shipping Timelines</h2>
+          </div>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
+            {/* Standard Shipping */}
+            <div style={{ padding: '25px', border: '1px solid #eee', borderRadius: '15px', background: '#fff' }}>
+              <h3 style={{ color: themeDark, fontSize: '20px', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <FaTruck color={themePrimary} /> Standard Shipping
+              </h3>
+              <p style={{ color: '#5a4a47', fontSize: '15px', lineHeight: '1.6' }}>
+                Takes <strong>3-7 business days</strong>. Ideal for non-urgent orders with tracking updates via SMS and Email.
+              </p>
+            </div>
+
+            {/* Express Shipping */}
+            <div style={{ padding: '25px', border: `1px solid ${themePrimary}`, borderRadius: '15px', background: '#fff5f4' }}>
+              <h3 style={{ color: themeDark, fontSize: '20px', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <FaCheckCircle color={themePrimary} /> Express Delivery
+              </h3>
+              <p style={{ color: '#5a4a47', fontSize: '15px', lineHeight: '1.6' }}>
+                Takes <strong>1-2 business days</strong>. Available in select metro cities for a small additional fee.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 2: Order Tracking */}
+        <section style={{ marginBottom: '50px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+            <FaMapMarkerAlt size={24} color={themePrimary} />
+            <h2 style={{ fontSize: '24px', fontWeight: '800', color: themeDark, margin: 0 }}>2. Real-Time Tracking</h2>
+          </div>
+          <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#5a4642' }}>
+            Once your order is dispatched, you will receive a <strong>Tracking ID</strong>. You can monitor your package status through:
+          </p>
+          <ul style={{ marginTop: '15px', color: '#666', fontSize: '15px', lineHeight: '2', listStyleType: 'square', marginLeft: '20px' }}>
+            <li>The 'My Orders' section on our website.</li>
+            <li>Tracking links sent to your registered WhatsApp/Email.</li>
+            <li>Directly on our courier partner's portal.</li>
+          </ul>
+        </section>
+
+        {/* Shipping Policy Note */}
+        <section style={{ marginBottom: '50px', padding: '30px', backgroundColor: themeDark, borderRadius: '15px', color: '#fff' }}>
+          <h3 style={{ fontSize: '20px', color: themePrimary, marginBottom: '10px' }}>Important Shipping Notes</h3>
+          <ul style={{ fontSize: '14px', lineHeight: '1.7', opacity: '0.9', paddingLeft: '20px' }}>
+            <li>Deliveries are not processed on Sundays or Public Holidays.</li>
+            <li>Free delivery is applicable on orders above ₹499.</li>
+            <li>Address changes are only possible before the order is dispatched.</li>
+          </ul>
+        </section>
+
+        {/* Contact Support */}
+        <section style={{ textAlign: 'center', borderTop: '1px solid #eee', paddingTop: '40px' }}>
+          <h2 style={{ fontSize: '22px', fontWeight: '700', color: themeDark, margin: '0 0 10px 0' }}>Where is my order?</h2>
+          <p style={{ color: '#888', fontSize: '14px', marginBottom: '20px' }}>If your order is delayed beyond the estimated time, please reach out.</p>
+          <button 
+            onClick={() => navigate('/contact')}
+            style={{ backgroundColor: themePrimary, color: '#fff', padding: '12px 35px', borderRadius: '50px', border: 'none', fontWeight: '700', cursor: 'pointer', transition: '0.3s' }}
+            onMouseEnter={(e) => e.target.style.backgroundColor = themeDark}
+            onMouseLeave={(e) => e.target.style.backgroundColor = themePrimary}
+          >
+            Track with Support
+          </button>
+        </section>
+      </main>
     </div>
   );
 }

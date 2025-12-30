@@ -68,3 +68,6 @@ body {
 .read-the-docs {
   color: #888;
 }
+html, body {
+  scroll-behavior: smooth;
+}

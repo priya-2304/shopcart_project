@@ -1,6 +1,6 @@
 import { useStore } from "../context/StoreContext";
-import { Link } from "react-router-dom"; // Link import karna mat bhulna bhai
-import { FaHeart, FaRegHeart , FaEye, FaShoppingBag, FaBolt } from "react-icons/fa"; // Thoda sundar icons ke liye
+import { Link } from "react-router-dom"; 
+import { FaHeart, FaRegHeart , FaEye, FaShoppingBag, FaBolt } from "react-icons/fa"; 
 
 export default function ProductCard({ product }) {
   const { addToCart, toggleWishlist, wishlist } = useStore();
@@ -8,7 +8,7 @@ export default function ProductCard({ product }) {
 
   return (
     <div className="product-card">
-      {/* IMAGE SECTION - Ab ye seedha detail page pe le jayega */}
+    
       <div className="product-img-wrapper" style={{ position: 'relative' }}>
         <Link to={`/product/${product.id}`}>
           <img
@@ -18,7 +18,6 @@ export default function ProductCard({ product }) {
           />
         </Link>
 
-        {/* Wishlist Button */}
         <button
           className={liked ? "wish active" : "wish"}
           style={{
@@ -33,18 +32,18 @@ export default function ProductCard({ product }) {
       cursor: 'pointer'
     }}
           onClick={(e) => {
-            e.preventDefault(); // Click handle karne ke liye
+            e.preventDefault(); 
             toggleWishlist(product);
           }}
         >
           {liked ? <FaHeart color="#E16C5B" /> : <FaRegHeart />}
         </button>
       </div>
-
-      {/* Product Info - Title par bhi Link laga diya */}
-      <Link to={`/product/${product.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-        <h3 className="product-title-home">{product.name}</h3>
-      </Link>
+ <Link to={`/product/${product.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+  <h3 className="product-title-home truncate-name" title={product.name}>
+    {product.name}
+  </h3>
+</Link>
       
       <p className="price">₹ {product.price}</p>
 
