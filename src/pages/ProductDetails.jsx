@@ -1,4 +1,5 @@
 import { useParams, useNavigate, Link, useLocation } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useStore } from "../context/StoreContext";
 import { products } from "../data/products"; 

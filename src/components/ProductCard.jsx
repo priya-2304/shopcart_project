@@ -39,12 +39,10 @@ export default function ProductCard({ product }) {
           {liked ? <FaHeart color="#E16C5B" /> : <FaRegHeart />}
         </button>
       </div>
- <Link to={`/product/${product.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-  <h3 className="product-title-home truncate-name" title={product.name}>
-    {product.name}
-  </h3>
-</Link>
-      
+
+      <Link to={`/product/${product.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+        <h3 className="product-title-home">{product.name}</h3>
+      </Link>
       <p className="price">₹ {product.price}</p>
 
       <div className="card-actions">

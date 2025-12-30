@@ -4,8 +4,13 @@ import ProductCard from "../components/ProductCard";
 import { products } from "../data/products";
 import { useStore } from "../context/StoreContext";
 import BackToTop from "../pages/BackToTop";
+
 import "../styles/products.css";
 import { FaChevronDown, FaChevronUp, FaSlidersH } from "react-icons/fa"; // Added Icons
+
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import "../styles/products.css"; 
 
 export default function Products() {
   const { search } = useStore();
