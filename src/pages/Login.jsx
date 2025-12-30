@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { FiMail, FiLock, FiShoppingCart, FiArrowRight } from 'react-icons/fi';
-import "../styles/login.css";
+import "../styles/Login.css";
 
 export default function Login({ setIsAuthenticated }) {
   const [email, setEmail] = useState('');

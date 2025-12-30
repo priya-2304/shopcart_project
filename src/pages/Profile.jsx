@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/profile.css";
+import "../styles/Profile.css";
 
 export default function Profile() {
   const [isEditing, setIsEditing] = useState(false);

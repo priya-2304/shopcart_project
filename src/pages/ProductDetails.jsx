@@ -5,7 +5,7 @@ import { useStore } from "../context/StoreContext";
 import { products } from "../data/products"; 
 import { FaStar, FaRegHeart, FaHeart, FaTruck, FaUndo, FaShieldAlt, FaArrowLeft, FaArrowRight, FaChevronDown, FaQuoteRight } from "react-icons/fa";
 import BackToTop from "../pages/BackToTop";
-import "../styles/productDetails.css";
+import "../styles/ProductDetails.css";
 
 export default function ProductDetails() {
   const { id } = useParams();

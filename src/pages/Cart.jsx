@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useStore } from "../context/StoreContext";
 import { useNavigate } from "react-router-dom";
-import "../styles/cart.css";
+import "../styles/Cart.css";
 
 export default function Cart() {
   const { cart, addToCart, removeFromCart, placeOrder } = useStore();

@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 // Naye icons address functionality ke liye
 import { LuPlus, LuTrash2, LuPencil, LuMapPin } from "react-icons/lu"; 
-import "../styles/account.css";
+import "../styles/Account.css";
 import Profile from "./Profile";
 import Cart from "./Cart";
 

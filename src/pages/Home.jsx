@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useStore } from "../context/StoreContext";
 import { Link, useNavigate } from "react-router-dom";
 import BackToTop from "../pages/BackToTop";
-import "../styles/home.css";
+import "../styles/Home.css";
 
 // Icons
 import { 

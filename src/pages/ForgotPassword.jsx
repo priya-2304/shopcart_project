@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiMail, FiArrowLeft, FiSend, FiShoppingCart } from 'react-icons/fi';
-import "../styles/login.css"; // Same CSS use karenge
+import "../styles/Login.css"; // Same CSS use karenge
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState('');
