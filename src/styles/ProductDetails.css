@@ -1308,10 +1308,10 @@
 /* Related Product Name Truncation */
 .sugg-product-name {
   display: -webkit-box;
-  -webkit-line-clamp: 1; /* Sirf 1 line dikhayega */
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;  
   overflow: hidden;
-  text-overflow: ellipsis; /* Ye '...' add kar dega */
+  text-overflow: ellipsis; 
   font-size: 1rem;
   font-weight: 600;
   color: #333;

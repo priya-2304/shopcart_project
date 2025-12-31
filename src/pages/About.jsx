@@ -10,15 +10,13 @@ const AboutUs = () => {
   };
 
   return (
-    <div className="about-container" style={{ paddingTop: '0px' }}> {/* Navbar gap fix */}
+    <div className="about-container" style={{ paddingTop: '0px' }}>
       
-      {/* Hero Section */}
       <section className="about-hero" style={{ marginBottom: '40px' }}>
         <h1 className="text-3xl font-bold text-center text-[#462C2F] mb-2 relative">About Us</h1>
         <p className="breadcrumb text-center" style={{ color: '#E16C5B', fontWeight: '600' }}>Our Story</p>
       </section>
 
-      {/* Main Content */}
       <section className="about-content">
         <div className="content-grid">
           
@@ -29,13 +27,13 @@ const AboutUs = () => {
               <span style={{ fontSize: '13px', fontWeight: '700', letterSpacing: '0.5px' }}>SINCE 2025</span>
             </div>
        <h2 className="main-title" style={{ 
-  fontSize: 'clamp(20px, 4vw,20px)', // Auto-adjusts for mobile
+  fontSize: 'clamp(20px, 4vw,20px)',
   lineHeight: '1.1', 
   color: '#3d1f1a', 
   fontWeight: '850', 
   letterSpacing: '-1.5px', 
   margin: '0 0 30px 0',
-  whiteSpace: 'nowrap', // No breaking into lines
+  whiteSpace: 'nowrap', 
   display: 'flex',
   alignItems: 'baseline',
   justifyContent: 'flex-start',
@@ -84,7 +82,6 @@ const AboutUs = () => {
               Our mission is to bring you the latest trends and high-quality products right to your doorstep.
             </p>
 
-            {/* Stats Grid - Boxed Items */}
             <div className="stats-grid" style={{ 
               display: 'grid', 
               gridTemplateColumns: 'repeat(2, 1fr)', 
@@ -113,7 +110,6 @@ const AboutUs = () => {
           </div>
         </div>
 
-        {/* Explore Button - Centered */}
         <div className="shop-now-cta" style={{ 
           display: 'flex', 
           justifyContent: 'center', 

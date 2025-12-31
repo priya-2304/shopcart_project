@@ -9,7 +9,7 @@ import {
   FaPhoneAlt,
   FaWhatsapp
 } from "react-icons/fa";
-// Naye icons address functionality ke liye
+
 import { LuPlus, LuTrash2, LuPencil, LuMapPin } from "react-icons/lu"; 
 import "../styles/Account.css";
 import Profile from "./Profile";
@@ -61,13 +61,10 @@ export default function Account() {
   );
 }
 
-/* ===== SUB COMPONENTS ===== */
-
 function MyProfile() {
   return <Profile />;
 }
 
-/* YE RAHA ADDRESS WALA PART - MEESHO STYLE */
 function SavedAddresses() {
   const [showForm, setShowForm] = useState(false);
   const [addresses, setAddresses] = useState([
